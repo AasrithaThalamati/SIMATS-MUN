@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMATS MUN 2026 - Diplomacy in Action</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Scroll Arrows -->
+    <button class="scroll-arrow" id="scrollUp" aria-label="Scroll Up">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+    <button class="scroll-arrow" id="scrollDown" aria-label="Scroll Down">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </button>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container container">
+            <a href="#home" class="nav-logo">SIMATS MUN</a>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">Team</a></li>
+                <li><a href="committees.html">Committees</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="#register" class="register-nav-btn">Register</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero fade-section">
+        <div class="hero-banner"></div>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="title-section">
+                <p class="university-name">Saveetha University</p>
+                <p class="college-name">SIMATS Engineering</p>
+                <h1 class="main-title">Model United Nations</h1>
+                <h2 class="event-title">SIMATS MUN 2026</h2>
+                <div class="tagline-container">
+                    <div class="tagline-ornament left"></div>
+                    <p class="tagline">Diplomacy in Action</p>
+                    <div class="tagline-ornament right"></div>
+                </div>
+            </div>
+            <div class="hero-buttons">
+                <a href="#register" class="cta-button primary-btn">
+                    <span>Register Now</span>
+                    <div class="btn-shine"></div>
+                </a>
+                <a href="#ipc" class="cta-button secondary-btn">
+                    <span>IPC Registration</span>
+                    <div class="btn-shine"></div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About SIMATS MUN 2026 Section -->
+    <section id="about" class="section about-section fade-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About SIMATS MUN 2026</h2>
+                <div class="title-underline"></div>
+                <p class="section-tagline">Diplomacy in Action</p>
+            </div>
+            <div class="about-content">
+                <div class="about-intro-section">
+                    <div class="about-ornament-top"></div>
+                    <p class="about-opening">
+                        Welcome to the inaugural edition of SIMATS Model United Nations 2026, a prestigious platform where future diplomats converge to engage in intellectual discourse and diplomatic excellence. As we embark on this historic first edition, we invite bright minds from across the nation to participate in this transformative experience that simulates the grandeur and complexity of international relations.
+                    </p>
+                    <div class="about-ornament-bottom"></div>
+                </div>
+                <div class="about-pillars">
+                    <div class="pillar-card">
+                        <div class="pillar-number">01</div>
+                        <h3 class="pillar-title">Global Diplomacy</h3>
+                        <div class="pillar-divider"></div>
+                        <p class="pillar-text">Our conference provides an immersive experience in global diplomacy, where delegates will debate pressing international issues, forge alliances, draft resolutions, and develop the leadership skills necessary to shape tomorrow's world through rigorous debate and collaborative problem-solving.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-number">02</div>
+                        <h3 class="pillar-title">Academic Excellence</h3>
+                        <div class="pillar-divider"></div>
+                        <p class="pillar-text">Participants will gain invaluable insights into the art of negotiation and the science of international cooperation, developing critical thinking, public speaking, and diplomatic skills that will serve them throughout their academic and professional careers.</p>
+                    </div>
+                    <div class="pillar-card">
+                        <div class="pillar-number">03</div>
+                        <h3 class="pillar-title">First Edition Legacy</h3>
+                        <div class="pillar-divider"></div>
+                        <p class="pillar-text">Be part of history as we launch the first-ever SIMATS MUN. This pioneering conference promises to set new standards in academic diplomacy, offering delegates an unparalleled opportunity to be the trailblazers of a legacy that will inspire generations to come.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Country Matrix Section -->
+    <section class="section country-matrix-section fade-section">
+        <div class="matrix-bg-pattern"></div>
+        <div class="matrix-bg-glow left"></div>
+        <div class="matrix-bg-glow right"></div>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Country Matrix</h2>
+                <div class="title-underline"></div>
+                <p class="section-tagline">Strategic Diplomatic Resources</p>
+            </div>
+        </div>
+        <div class="matrix-horizontal-strip">
+            <div class="matrix-h-card" id="matrixCard1">
+                <div class="matrix-h-card-shimmer"></div>
+                <div class="matrix-h-left">
+                    <div class="matrix-h-icon-ring">
+                        <div class="matrix-h-icon-inner">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="matrix-h-icon-orbit"></div>
+                        <div class="matrix-h-icon-orbit delay"></div>
+                    </div>
+                </div>
+                <div class="matrix-h-center">
+                    <div class="matrix-h-label">Resource I</div>
+                    <h3 class="matrix-h-title">Country Allocations</h3>
+                    <p class="matrix-h-desc">Comprehensive country assignments across all committees — strategically designed for optimal diplomatic representation and maximum engagement.</p>
+                    <div class="matrix-h-tags">
+                        <span class="matrix-h-tag">◆ Full Coverage</span>
+                        <span class="matrix-h-tag">◆ Position Analysis</span>
+                        <span class="matrix-h-tag">◆ Live Updates</span>
+                    </div>
+                </div>
+                <div class="matrix-h-right">
+                    <div class="matrix-h-stats-row">
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">6</span><span class="matrix-h-stat-lbl">Committees</span></div>
+                        <div class="matrix-h-stat-sep"></div>
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">150+</span><span class="matrix-h-stat-lbl">Positions</span></div>
+                        <div class="matrix-h-stat-sep"></div>
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">50+</span><span class="matrix-h-stat-lbl">Nations</span></div>
+                    </div>
+                    <a href="#" class="matrix-h-btn">
+                        <span>View Country Matrix</span>
+                        <svg class="matrix-h-btn-arrow" viewBox="0 0 24 24" fill="none">
+                            <path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="matrix-h-divider">
+                <div class="matrix-h-divider-line"></div>
+                <div class="matrix-h-divider-gem">◆</div>
+                <div class="matrix-h-divider-line"></div>
+            </div>
+            <div class="matrix-h-card" id="matrixCard2">
+                <div class="matrix-h-card-shimmer"></div>
+                <div class="matrix-h-left">
+                    <div class="matrix-h-icon-ring">
+                        <div class="matrix-h-icon-inner">
+                            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M6.5 2H20V22H6.5A2.5 2.5 0 0 1 4 19.5V4.5A2.5 2.5 0 0 1 6.5 2Z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M8 7H16M8 11H16M8 15H12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <div class="matrix-h-icon-orbit"></div>
+                        <div class="matrix-h-icon-orbit delay"></div>
+                    </div>
+                </div>
+                <div class="matrix-h-center">
+                    <div class="matrix-h-label">Resource II</div>
+                    <h3 class="matrix-h-title">Background Guides</h3>
+                    <p class="matrix-h-desc">Meticulously crafted research guides with historical context, policy frameworks, and strategic insights for committee excellence.</p>
+                    <div class="matrix-h-tags">
+                        <span class="matrix-h-tag">◆ Deep Research</span>
+                        <span class="matrix-h-tag">◆ Historical Context</span>
+                        <span class="matrix-h-tag">◆ PDF Ready</span>
+                    </div>
+                </div>
+                <div class="matrix-h-right">
+                    <div class="matrix-h-stats-row">
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">100+</span><span class="matrix-h-stat-lbl">Pages</span></div>
+                        <div class="matrix-h-stat-sep"></div>
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">6</span><span class="matrix-h-stat-lbl">Guides</span></div>
+                        <div class="matrix-h-stat-sep"></div>
+                        <div class="matrix-h-stat"><span class="matrix-h-stat-num">PDF</span><span class="matrix-h-stat-lbl">Format</span></div>
+                    </div>
+                    <a href="#" class="matrix-h-btn">
+                        <svg class="matrix-h-btn-arrow" viewBox="0 0 24 24" fill="none" style="margin-right:0.4rem;margin-left:0;">
+                            <path d="M21 15V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V15M7 10L12 15M12 15L17 10M12 15V3" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Download Resources</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Committees Section -->
+    <section id="committees" class="section committees-section fade-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Committees</h2>
+                <div class="title-underline"></div>
+                <p class="section-tagline">Six Distinguished Forums for Global Discourse</p>
+            </div>
+            <div class="committees-grid">
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="UNHRC.png" alt="UNHRC Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">UNHRC</h3>
+                    <h4 class="committee-full">United Nations Human Rights Council</h4>
+                    <p class="committee-desc">Addressing fundamental human rights issues and promoting dignity for all peoples worldwide through comprehensive policy frameworks and international cooperation.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="AIPPM.png" alt="AIPPM Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">AIPPM</h3>
+                    <h4 class="committee-full">All India Political Parties Meet</h4>
+                    <p class="committee-desc">Simulating India's democratic dialogue on critical national issues and policy frameworks, fostering consensus across diverse political perspectives.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="UNGA.png" alt="UNGA Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">UNGA</h3>
+                    <h4 class="committee-full">United Nations General Assembly</h4>
+                    <p class="committee-desc">The premier forum for multilateral discussion on international peace and security matters, addressing global challenges through diplomatic dialogue.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="EcoFin (2).png" alt="ECOFIN Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">ECOFIN</h3>
+                    <h4 class="committee-full">Economic and Financial Affairs Council</h4>
+                    <p class="committee-desc">Deliberating on global economic policies, financial regulations, and sustainable development strategies for shared prosperity.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="CRISIS.png" alt="Crisis Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">CRISIS</h3>
+                    <h4 class="committee-full">Crisis Committee</h4>
+                    <p class="committee-desc">Fast-paced dynamic simulation requiring rapid response to evolving international crises, testing adaptability and strategic decision-making.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+                <div class="committee-card">
+                    <div class="committee-emblem-wrapper"><img src="IPC.png" alt="IPC Logo" class="committee-emblem"></div>
+                    <h3 class="committee-abbr">IPC</h3>
+                    <h4 class="committee-full">International Press Corps</h4>
+                    <p class="committee-desc">Chronicling conference proceedings through journalism, photography, and digital media, capturing the essence of diplomatic discourse.</p>
+                    <div class="committee-footer"><span class="committee-tag">Diplomacy in Action</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section contact-section fade-section">
+        <div class="contact-bg-pattern"></div>
+        <div class="contact-corner contact-corner-tl"></div>
+        <div class="contact-corner contact-corner-tr"></div>
+        <div class="contact-corner contact-corner-bl"></div>
+        <div class="contact-corner contact-corner-br"></div>
+
+        <!-- UN-style decorative seal watermark -->
+        <div class="contact-un-seal" aria-hidden="true">
+            <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="100" cy="100" r="95" stroke="currentColor" stroke-width="1.5" stroke-dasharray="4 3"/>
+                <circle cx="100" cy="100" r="78" stroke="currentColor" stroke-width="1"/>
+                <circle cx="100" cy="100" r="58" stroke="currentColor" stroke-width="0.8"/>
+                <!-- Globe lines -->
+                <ellipse cx="100" cy="100" rx="40" ry="58" stroke="currentColor" stroke-width="0.8"/>
+                <ellipse cx="100" cy="100" rx="58" ry="40" stroke="currentColor" stroke-width="0.8"/>
+                <line x1="100" y1="42" x2="100" y2="158" stroke="currentColor" stroke-width="0.8"/>
+                <line x1="42" y1="100" x2="158" y2="100" stroke="currentColor" stroke-width="0.8"/>
+                <!-- Olive branches hint -->
+                <path d="M30,120 Q50,100 70,115 Q50,130 30,120Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                <path d="M170,120 Q150,100 130,115 Q150,130 170,120Z" stroke="currentColor" stroke-width="0.8" fill="none"/>
+                <!-- Star dots -->
+                <circle cx="100" cy="28" r="2.5" fill="currentColor"/>
+                <circle cx="100" cy="172" r="2.5" fill="currentColor"/>
+                <circle cx="28" cy="100" r="2.5" fill="currentColor"/>
+                <circle cx="172" cy="100" r="2.5" fill="currentColor"/>
+                <circle cx="50" cy="50" r="1.5" fill="currentColor"/>
+                <circle cx="150" cy="50" r="1.5" fill="currentColor"/>
+                <circle cx="50" cy="150" r="1.5" fill="currentColor"/>
+                <circle cx="150" cy="150" r="1.5" fill="currentColor"/>
+            </svg>
+        </div>
+
+        <div class="container">
+            <!-- Section title banner -->
+            <div class="contact-title-banner">
+                <div class="contact-title-line"></div>
+                <div class="contact-title-center">
+                    <span class="contact-title-tag">&#9670; SIMATS MUN 2026 &#9670;</span>
+                    <h2 class="contact-title-main">Delegate Correspondence</h2>
+                    <p class="contact-title-sub">Open Floor for Inquiries &amp; Diplomatic Dialogue</p>
+                </div>
+                <div class="contact-title-line"></div>
+            </div>
+
+            <!-- 3-column contact block -->
+            <div class="contact-triptych">
+
+                <!-- COL 1 — Diplomatic Info Cards -->
+                <div class="contact-info-col">
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="1.8"/><path d="M2 7l8.586 5.657a2 2 0 0 0 2.828 0L22 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="contact-info-body">
+                            <span class="contact-info-label">Official Correspondence</span>
+                            <a href="/cdn-cgi/l/email-protection#72111d1c0613110632011b1f1306011f071c5c111d1f" class="contact-info-value"><span class="__cf_email__" data-cfemail="b1d2dedfc5d0d2c5f1c2d8dcd0c5c2dcc4df9fd2dedc">[email&#160;protected]</span></a>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9" r="2.5" stroke="currentColor" stroke-width="1.8"/></svg>
+                        </div>
+                        <div class="contact-info-body">
+                            <span class="contact-info-label">Host Nation</span>
+                            <span class="contact-info-value">Saveetha University,<br>SIMATS Engineering, Chennai</span>
+                        </div>
+                    </div>
+                    <div class="contact-info-card">
+                        <div class="contact-info-icon">
+                            <svg viewBox="0 0 24 24" fill="none" width="22" height="22"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        </div>
+                        <div class="contact-info-body">
+                            <span class="contact-info-label">Conference Date</span>
+                            <span class="contact-info-value">SIMATS MUN 2026<br><em style="font-style:italic;font-size:0.88em;opacity:0.7;">Date to be announced</em></span>
+                        </div>
+                    </div>
+
+                    <!-- Social row -->
+                    <div class="contact-social-row">
+                        <span class="contact-social-label">Follow the Assembly</span>
+                        <div class="contact-social-btns">
+                            <a href="#" class="contact-social-icon-btn" aria-label="Instagram">
+                                <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
+                                <span>Instagram</span>
+                            </a>
+                            <a href="#" class="contact-social-icon-btn" aria-label="LinkedIn">
+                                <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M16 8C17.59 8 19.12 8.63 20.24 9.76C21.37 10.88 22 12.41 22 14V21H18V14C18 13.47 17.79 12.96 17.41 12.59C17.04 12.21 16.53 12 16 12C15.47 12 14.96 12.21 14.59 12.59C14.21 12.96 14 13.47 14 14V21H10V14C10 12.41 10.63 10.88 11.76 9.76C12.88 8.63 14.41 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" class="contact-social-icon-btn" aria-label="Twitter">
+                                <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Twitter</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Vertical divider -->
+                <div class="contact-vert-divider">
+                    <div class="contact-vert-line"></div>
+                    <div class="contact-vert-gem">&#9670;</div>
+                    <div class="contact-vert-gem">&#9670;</div>
+                    <div class="contact-vert-gem">&#9670;</div>
+                    <div class="contact-vert-line"></div>
+                </div>
+
+                <!-- COL 2 — Message Form -->
+                <div class="contact-form-col">
+                    <div class="contact-form-header">
+                        <div class="contact-form-pulse"></div>
+                        <span class="contact-form-header-title">Submit Your Communiqué</span>
+                        <span class="contact-form-header-badge">
+                            <svg viewBox="0 0 24 24" fill="none" width="11" height="11"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                            Response within 24h
+                        </span>
+                    </div>
+                    <form class="contact-form-compact" id="contactForm">
+                        <div class="cfc-field">
+                            <label for="firstName">
+                                <svg viewBox="0 0 24 24" fill="none" width="12" height="12"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                                First Name
+                            </label>
+                            <input type="text" id="firstName" name="firstName" placeholder="First name" required>
+                        </div>
+                        <div class="cfc-field">
+                            <label for="lastName">
+                                <svg viewBox="0 0 24 24" fill="none" width="12" height="12"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="2"/></svg>
+                                Last Name
+                            </label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Last name" required>
+                        </div>
+                        <div class="cfc-field">
+                            <label for="email">
+                                <svg viewBox="0 0 24 24" fill="none" width="12" height="12"><rect x="2" y="4" width="20" height="16" rx="3" stroke="currentColor" stroke-width="2"/><path d="M2 7l10 7 10-7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="cfc-field">
+                            <label for="subject">
+                                <svg viewBox="0 0 24 24" fill="none" width="12" height="12"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                Agenda Item
+                            </label>
+                            <select id="subject" name="subject" required>
+                                <option value="">Select topic</option>
+                                <option value="registration">Registration Inquiry</option>
+                                <option value="committees">Committee Information</option>
+                                <option value="general">General Question</option>
+                                <option value="partnership">Partnership Opportunities</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="cfc-field cfc-field-full">
+                            <label for="message">
+                                <svg viewBox="0 0 24 24" fill="none" width="12" height="12"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2"/></svg>
+                                Statement / Message
+                            </label>
+                            <textarea id="message" name="message" rows="4" placeholder="The floor is yours — write your message here..." required></textarea>
+                        </div>
+                        <div class="contact-submit-wrap-full">
+                            <button type="submit" class="contact-submit-btn">
+                                <span class="btn-text">Dispatch Communiqué</span>
+                                <span class="btn-icon">
+                                    <svg viewBox="0 0 24 24" fill="none"><path d="M22 2L11 13M22 2L15 22L11 13M22 2L2 9L11 13" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                </span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+
+            <!-- Bottom ribbon -->
+            <div class="contact-bottom-ribbon">
+                <div class="contact-ribbon-line"></div>
+                <span class="contact-ribbon-text">&#9670;&ensp;Diplomacy in Action &mdash; SIMATS MUN 2026&ensp;&#9670;</span>
+                <div class="contact-ribbon-line"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DELEGATE REGISTRATION SECTION -->
+    <section id="register" class="section register-section register-delegate-section fade-section">
+        <div class="register-container">
+            <div class="section-header">
+                <div class="reg-section-eyebrow">
+                    <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>Delegate Registration</span>
+                </div>
+                <h2 class="section-title">Join As a Delegate</h2>
+                <div class="title-underline"></div>
+                <p class="section-tagline">Represent your nation · Shape global policy · Build your legacy</p>
+            </div>
+
+            <div class="reg-grid-4">
+                <div class="reg-mini-card">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-delegate">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Full Committee<br>Access</h4>
+                    <p class="reg-mini-desc">Debate in all 6 prestigious committees across UNHRC, UNGA, AIPPM & more.</p>
+                </div>
+                <div class="reg-mini-card">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-delegate">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Conference Kit<br>&amp; Materials</h4>
+                    <p class="reg-mini-desc">Receive exclusive delegate kit, background guides, and position papers.</p>
+                </div>
+                <div class="reg-mini-card">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-delegate">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2"/>
+                            <path d="M8 14l-2 7 6-3 6 3-2-7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Certificates &amp;<br>Awards</h4>
+                    <p class="reg-mini-desc">Earn official participation certificates and compete for prestigious awards.</p>
+                </div>
+                <div class="reg-mini-card">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-delegate">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="2"/>
+                            <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Networking<br>Opportunities</h4>
+                    <p class="reg-mini-desc">Connect with future leaders, diplomats, and peers from across the nation.</p>
+                </div>
+            </div>
+
+            <div class="reg-cta-banner reg-cta-delegate">
+                <div class="reg-cta-left">
+                    <h4 class="reg-cta-title">Ready to Represent Your Nation?</h4>
+                    <p class="reg-cta-sub">Secure your delegate position at SIMATS MUN 2026 — limited seats available across all committees.</p>
+                </div>
+                <a href="#" class="reg-cta-btn reg-cta-btn-delegate">
+                    <span>Register as Delegate</span>
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- IPC REGISTRATION SECTION -->
+    <section id="ipc" class="section register-section register-ipc-section fade-section">
+        <div class="register-container">
+            <div class="section-header">
+                <div class="reg-section-eyebrow reg-eyebrow-ipc">
+                    <svg viewBox="0 0 24 24" fill="none" width="20" height="20">
+                        <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                        <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                        <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span>IPC Registration</span>
+                </div>
+                <h2 class="section-title ipc-title">Join As Press Corps</h2>
+                <div class="title-underline"></div>
+                <p class="section-tagline">Document history · Chronicle diplomacy · Tell the story</p>
+            </div>
+
+            <div class="reg-grid-4">
+                <div class="reg-mini-card reg-mini-card-ipc">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-ipc">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.45 2 2 0 0 1 3.59 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6.29 6.29l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Official Media<br>Credentials</h4>
+                    <p class="reg-mini-desc">Gain official press accreditation and cover sessions as a professional journalist.</p>
+                </div>
+                <div class="reg-mini-card reg-mini-card-ipc">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-ipc">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <rect x="3" y="3" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="8.5" cy="8.5" r="1.5" fill="currentColor"/>
+                            <path d="M21 15L16 10L5 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Exclusive Session<br>Access</h4>
+                    <p class="reg-mini-desc">Enter restricted committee sessions and capture the pulse of live diplomacy.</p>
+                </div>
+                <div class="reg-mini-card reg-mini-card-ipc">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-ipc">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Professional<br>Portfolio</h4>
+                    <p class="reg-mini-desc">Build a real-world journalism portfolio with published articles and photo essays.</p>
+                </div>
+                <div class="reg-mini-card reg-mini-card-ipc">
+                    <div class="reg-mini-corner tl"></div><div class="reg-mini-corner tr"></div>
+                    <div class="reg-mini-corner bl"></div><div class="reg-mini-corner br"></div>
+                    <div class="reg-mini-icon-wrap reg-icon-ipc">
+                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </div>
+                    <h4 class="reg-mini-title">Journalism<br>Experience</h4>
+                    <p class="reg-mini-desc">Practise digital media, live reporting, and editorial skills in a prestigious setting.</p>
+                </div>
+            </div>
+
+            <div class="reg-cta-banner reg-cta-ipc">
+                <div class="reg-cta-left">
+                    <h4 class="reg-cta-title">Ready to Chronicle Diplomacy?</h4>
+                    <p class="reg-cta-sub">Join the International Press Corps and tell the stories that shape history at SIMATS MUN 2026.</p>
+                </div>
+                <a href="#" class="reg-cta-btn reg-cta-btn-ipc">
+                    <span>Join IPC Now</span>
+                    <svg viewBox="0 0 24 24" fill="none" width="18" height="18"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section footer-brand">
+                    <div class="footer-logo-container">
+                        <h3 class="footer-logo">SIMATS MUN 2026</h3>
+                        <div class="logo-underline"></div>
+                    </div>
+                    <p class="footer-tagline">Diplomacy in Action</p>
+                    <p class="footer-description">The inaugural Model United Nations conference of Saveetha University, SIMATS Engineering.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon" aria-label="Instagram">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="2" width="20" height="20" rx="5" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="2"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M16 8C17.5913 8 19.1174 8.63214 20.2426 9.75736C21.3679 10.8826 22 12.4087 22 14V21H18V14C18 13.4696 17.7893 12.9609 17.4142 12.5858C17.0391 12.2107 16.5304 12 16 12C15.4696 12 14.9609 12.2107 14.5858 12.5858C14.2107 12.9609 14 13.4696 14 14V21H10V14C10 12.4087 10.6321 10.8826 11.7574 9.75736C12.8826 8.63214 14.4087 8 16 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 9H2V21H6V9Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="4" cy="4" r="2" stroke="currentColor" stroke-width="2"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Twitter">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M23 3C22.0424 3.67548 20.9821 4.19211 19.86 4.53C19.2577 3.83751 18.4573 3.34669 17.567 3.12393C16.6767 2.90116 15.7395 2.95718 14.8821 3.28444C14.0247 3.6117 13.2884 4.1944 12.773 4.95372C12.2575 5.71303 11.9877 6.61234 12 7.53V8.53C10.2426 8.57557 8.50127 8.18581 6.93101 7.39545C5.36074 6.60508 4.01032 5.43864 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                        <a href="#" class="social-icon" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-heading">Quick Links</h3>
+                    <div class="footer-heading-underline"></div>
+                    <ul class="footer-links">
+                        <li><a href="#home"><span class="link-arrow">→</span> Home</a></li>
+                        <li><a href="#about"><span class="link-arrow">→</span> About</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> Committees</a></li>
+                        <li><a href="team.html"><span class="link-arrow">→</span> Team</a></li>
+                        <li><a href="#register"><span class="link-arrow">→</span> Register</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-heading">Committees</h3>
+                    <div class="footer-heading-underline"></div>
+                    <ul class="footer-links">
+                        <li><a href="#committees"><span class="link-arrow">→</span> UNHRC</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> AIPPM</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> UNGA</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> ECOFIN</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> Crisis</a></li>
+                        <li><a href="#committees"><span class="link-arrow">→</span> IPC</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section footer-contact-section">
+                    <h3 class="footer-heading">Contact</h3>
+                    <div class="footer-heading-underline"></div>
+                    <div class="footer-contact-items">
+                        <div class="footer-contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M22 6L12 13L2 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </div>
+                            <a href="/cdn-cgi/l/email-protection#e2818d8c96838196a2918b8f8396918f978ccc818d8f"><span class="__cf_email__" data-cfemail="15767a7b6174766155667c7874616678607b3b767a78">[email&#160;protected]</span></a>
+                        </div>
+                        <div class="footer-contact-item">
+                            <div class="contact-icon">
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                            </div>
+                            <p>Saveetha University,<br>SIMATS Engineering, Chennai</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-divider"></div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p class="copyright">&copy; 2026 SIMATS MUN. All Rights Reserved.</p>
+                    <div class="footer-bottom-links">
+                        <a href="#" class="bottom-link">Privacy Policy</a>
+                        <span class="separator">•</span>
+                        <a href="#" class="bottom-link">Terms of Service</a>
+                        <span class="separator">•</span>
+                        <a href="#" class="bottom-link">Code of Conduct</a>
+                    </div>
+                    <button class="scroll-to-top" id="scrollToTop" aria-label="Scroll to top">
+                        <svg viewBox="0 0 24 24" fill="none" width="16" height="16"><path d="M12 19V5M12 5L5 12M12 5L19 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

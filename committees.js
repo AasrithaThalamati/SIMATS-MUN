@@ -11,28 +11,51 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(() => { document.body.style.opacity = '1'; });
 
     /* ── 2. NAVBAR MOBILE TOGGLE ── */
-    const navToggle = document.getElementById('navToggle');
-    const navMenu   = document.getElementById('navMenu');
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu   = document.getElementById('nav-menu');
+    const navOverlay = document.getElementById('nav-overlay');
 
     navToggle?.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        const spans = navToggle.querySelectorAll('span');
         if (navMenu.classList.contains('active')) {
-            spans[0].style.transform = 'translateY(6px) rotate(45deg)';
-            spans[1].style.opacity   = '0';
-            spans[2].style.transform = 'translateY(-6px) rotate(-45deg)';
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         } else {
-            spans[0].style.transform = '';
-            spans[1].style.opacity   = '';
-            spans[2].style.transform = '';
+            navMenu.classList.add('active');
+            navToggle.classList.add('active');
+            if (navOverlay) navOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
     });
 
     navMenu?.querySelectorAll('a').forEach(link => {
         link.addEventListener('click', () => {
             navMenu.classList.remove('active');
-            navToggle?.querySelectorAll('span').forEach(s => { s.style.transform = ''; s.style.opacity = ''; });
+            navToggle.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
         });
+    });
+
+    // Close on overlay click
+    if (navOverlay) {
+        navOverlay.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        });
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            if (navOverlay) navOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        }
     });
 
     /* ── 3. HERO PARTICLES ── */

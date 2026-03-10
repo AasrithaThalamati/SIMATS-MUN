@@ -146,6 +146,31 @@ html {
     transition: all 0.3s ease;
 }
 
+.nav-logo-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    text-decoration: none;
+}
+
+.nav-logo-img {
+    height: 54px;
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.35));
+    transition: filter 0.3s ease, transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.nav-logo-wrap:hover .nav-logo-img {
+    filter: drop-shadow(0 0 10px rgba(212, 175, 55, 0.7));
+    transform: scale(1.04);
+}
+
+.nav-logo-wrap .nav-logo {
+    text-decoration: none;
+}
+
 .nav-logo:hover {
     color: var(--light-gold);
 }
@@ -182,6 +207,9 @@ html {
 
 .nav-menu a:hover::after { width: 100%; }
 .nav-menu a:hover { color: var(--gold); }
+
+.nav-active { color: var(--gold) !important; }
+.nav-active::after { width: 100% !important; }
 
 .register-nav-btn {
     background: var(--gold);
@@ -929,6 +957,7 @@ html {
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
+    align-items: stretch;
     position: relative;
     z-index: 1;
 }
@@ -952,7 +981,10 @@ html {
     box-shadow: 0 4px 18px rgba(71,11,11,0.07);
     transition: all 0.4s ease;
     position: relative;
-    overflow: hidden;
+    overflow: visible;
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
 }
 
 .committee-card::before {
@@ -1014,6 +1046,7 @@ html {
     line-height: 1.8;
     margin-bottom: 1.5rem;
     text-align: center;
+    flex: 1;
 }
 
 .committee-footer {
@@ -1999,7 +2032,7 @@ a.contact-info-value:hover { color: var(--light-gold); }
 
 @media (max-width: 1024px) {
     .committees-grid { grid-template-columns: repeat(2, 1fr); }
-    .committees-grid-5 { gap: 1.5rem; }
+    .committees-grid-5 { gap: 1.5rem; align-items: stretch; }
     .committees-grid-5 .committee-card { flex: 0 1 calc(50% - 0.75rem); }
     .contact-triptych { grid-template-columns: 1fr; }
     .contact-vert-divider { display: none; }
@@ -2020,6 +2053,10 @@ a.contact-info-value:hover { color: var(--light-gold); }
     .matrix-h-stats-row { width: 100%; justify-content: center; }
     .matrix-horizontal-strip { padding: 0 15px; }
     .contact-form-compact { grid-template-columns: 1fr; }
+
+    /* Committee Cards - 900px */
+    .committees-grid-5 { align-items: stretch; }
+    .committee-card { min-height: auto; overflow: visible; }
 }
 
 @media (max-width: 768px) {
@@ -2045,6 +2082,7 @@ a.contact-info-value:hover { color: var(--light-gold); }
     .hero-buttons { flex-direction: column; gap: 1rem; }
     .cta-button { width: 100%; max-width: 280px; }
     .committees-grid { grid-template-columns: 1fr; }
+    .committees-grid-5 { gap: 1.5rem; align-items: stretch; }
     .committees-grid-5 .committee-card { flex: 0 1 100%; }
     .contact-triptych { grid-template-columns: 1fr; }
     .contact-vert-divider { display: none; }
@@ -2058,12 +2096,29 @@ a.contact-info-value:hover { color: var(--light-gold); }
     .reg-grid-4 { grid-template-columns: repeat(2, 1fr); }
     .reg-cta-banner { flex-direction: column; align-items: flex-start; padding: 1.8rem; }
 
+    /* Committee Cards Mobile - 768px */
+    .committees-grid-5 { gap: 1.5rem; align-items: stretch; }
+    .committee-card { padding: 2rem 1.8rem 1.8rem; overflow: visible; }
+    .committee-emblem { width: 110px; height: 110px; }
+    .committee-abbr { font-size: 1.6rem; }
+    .committee-full { font-size: 0.95rem; }
+    .committee-desc { font-size: 0.95rem; }
+
     .footer-content { grid-template-columns: 1fr; gap: 2.5rem; }
     .footer-brand { padding-right: 0; text-align: center; }
     .logo-underline { margin-left: auto; margin-right: auto; }
     .footer-social { justify-content: center; }
     .footer-bottom-content { flex-direction: column; text-align: center; }
     .footer-bottom-links { flex-wrap: wrap; justify-content: center; }
+
+    /* Matrix Section Mobile - 768px */
+    .matrix-h-card { padding: 1.8rem 1.5rem; }
+    .matrix-h-title { font-size: 1.4rem; }
+    .matrix-h-desc { font-size: 0.95rem; }
+    .matrix-h-right { gap: 1.2rem; }
+    .matrix-h-stats-row { gap: 1.5rem; padding: 0.8rem 1.2rem; }
+    .matrix-h-stat-num { font-size: 1.3rem; }
+    .matrix-h-divider { padding: 0 1.5rem; }
 
     .hero,
     .section,
@@ -2092,6 +2147,39 @@ a.contact-info-value:hover { color: var(--light-gold); }
     .contact-form-compact { padding: 1.2rem; }
     .reg-grid-4 { grid-template-columns: 1fr; }
     .reg-cta-title { font-size: 1.25rem; }
+
+    /* Committee Cards Mobile - 480px */
+    .committees-grid-5 { gap: 1.2rem; align-items: flex-start; }
+    .committee-card { padding: 1.8rem 1.3rem 1.5rem; min-height: auto; overflow: visible; }
+    .committee-emblem { width: 100px; height: 100px; }
+    .committee-abbr { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .committee-full { font-size: 0.9rem; margin-bottom: 1rem; }
+    .committee-desc { font-size: 0.9rem; line-height: 1.6; margin-bottom: 1rem; flex: 1; }
+    .committee-footer { padding-top: 0.8rem; }
+    .committee-tag { font-size: 0.75rem; }
+
+    /* Matrix Section Mobile - 480px */
+    .matrix-h-left { margin-bottom: 0.8rem; }
+    .matrix-h-icon-ring { width: 70px; height: 70px; }
+    .matrix-h-icon-inner { width: 50px; height: 50px; }
+    .matrix-h-icon-inner svg { width: 24px; height: 24px; }
+    .matrix-h-icon-orbit:first-of-type { width: 65px; height: 65px; }
+    .matrix-h-icon-orbit.delay { width: 75px; height: 75px; }
+    .matrix-h-card { padding: 1.5rem 1rem; gap: 1rem; margin: 4px 0; }
+    .matrix-h-title { font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .matrix-h-label { font-size: 0.7rem; }
+    .matrix-h-desc { font-size: 0.9rem; line-height: 1.5; margin-bottom: 0.8rem; }
+    .matrix-h-tags { gap: 0.5rem; margin-bottom: 0.8rem; }
+    .matrix-h-tag { font-size: 0.75rem; }
+    .matrix-h-stats-row { gap: 0.8rem; padding: 0.6rem 0.8rem; flex-wrap: wrap; flex-direction: column; }
+    .matrix-h-stat { gap: 0.1rem; }
+    .matrix-h-stat-num { font-size: 1.1rem; }
+    .matrix-h-stat-lbl { font-size: 0.65rem; }
+    .matrix-h-stat-sep { display: none; }
+    .matrix-h-divider { padding: 0 1rem; margin: 2px 0; }
+    .matrix-h-btn { padding: 9px 20px; font-size: 0.8rem; gap: 0.5rem; }
+    .matrix-h-btn-arrow { width: 14px; height: 14px; }
+    .matrix-horizontal-strip { padding: 0 10px; }
 }
 
 .hero-vignette {

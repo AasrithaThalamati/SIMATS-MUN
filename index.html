@@ -79,6 +79,8 @@
             class="register-nav-btn">Register</a></li>
       </ul>
     </div>
+    <!-- Nav progress bar -->
+    <div class="nav-progress" id="nav-progress"></div>
   </nav>
 
   <!-- ============================================================
@@ -1426,49 +1428,251 @@
     }
 
     @media (max-width: 640px) {
+      #secretariatModal {
+        padding: 1rem;
+      }
+
+      .slm-outer {
+        max-width: 95vw;
+        max-height: 90vh;
+        width: 100%;
+      }
+
+      .slm-paper {
+        box-shadow:
+          0 20px 60px -10px rgba(0, 0, 0, 0.5),
+          0 10px 20px rgba(0, 0, 0, 0.3),
+          inset 0 1px 0 rgba(255, 255, 255, 0.6);
+      }
+
+      .slm-close {
+        width: 32px;
+        height: 32px;
+        font-size: 0.85rem;
+        top: 12px;
+        right: 12px;
+      }
+
       .slm-header {
-        padding: 2rem 1.8rem;
+        padding: 1.8rem 1.5rem 1.4rem;
+      }
+
+      .slm-logo-img {
+        width: 85px;
+        height: 85px;
+        filter: drop-shadow(0 0 16px rgba(200, 160, 32, 0.5)) drop-shadow(0 0 35px rgba(200, 160, 32, 0.15));
+      }
+
+      .slm-org-line {
+        font-size: 0.5rem;
+        letter-spacing: 0.35em;
+        margin-bottom: 0.4rem;
+      }
+
+      .slm-title-main {
+        font-size: 1.2rem;
+        letter-spacing: 0.1em;
+        text-shadow: 0 0 30px rgba(212, 175, 55, 0.5), 0 2px 0 rgba(0, 0, 0, 0.5);
+      }
+
+      .slm-title-sub {
+        font-size: 0.95rem;
+        letter-spacing: 0.05em;
+      }
+
+      .slm-header-rule {
+        gap: 0.7rem;
+        margin-top: 1.2rem;
+      }
+
+      .slm-header-rule-gem {
+        font-size: 0.5rem;
+        letter-spacing: 0.35rem;
       }
 
       .slm-body {
-        padding: 2rem 1.8rem 1.5rem;
-      }
-
-      .slm-footer {
-        grid-template-columns: 1fr;
-        padding: 0 1.8rem;
-      }
-
-      .slm-signature-block {
-        padding-bottom: 0;
-      }
-
-      .slm-seal-col {
-        align-items: flex-start;
-        padding-bottom: 2rem;
-      }
-
-      .slm-bottom-ribbon {
-        padding: 1rem 1.8rem;
-      }
-
-      .slm-quote-block {
-        margin: 2rem -1.8rem;
-        padding: 1.6rem 1.8rem;
+        padding: 1.6rem 1.5rem 1.2rem;
       }
 
       .slm-date-ref {
         flex-direction: column;
-        gap: 0.3rem;
+        gap: 0.25rem;
+        margin-bottom: 1.4rem;
+        padding-bottom: 0.8rem;
+        border-bottom: 1px solid rgba(10, 7, 0, 0.08);
+      }
+
+      .slm-ref-no {
+        font-size: 0.6rem;
+        letter-spacing: 0.15em;
+      }
+
+      .slm-date-val {
+        font-size: 0.9rem;
+      }
+
+      .slm-salutation {
+        font-size: 1.15rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .slm-paragraph {
+        font-size: 1rem;
+        line-height: 1.85;
+        margin-bottom: 1.2rem;
+      }
+
+      .slm-paragraph.dropcap::first-letter {
+        font-size: 3.5rem;
+        margin-right: 0.06em;
+        margin-top: 0.08em;
+      }
+
+      .slm-quote-block {
+        margin: 1.8rem -1.5rem;
+        padding: 1.4rem 1.5rem;
+      }
+
+      .slm-quote-mark {
+        font-size: 5rem;
+        line-height: 0.4;
+      }
+
+      .slm-quote-text {
+        font-size: 1.1rem;
+        line-height: 1.6;
+      }
+
+      .slm-committees-row {
+        gap: 0.4rem;
+        margin: 1.6rem 0;
+      }
+
+      .slm-committee-chip {
+        font-size: 0.65rem;
+        padding: 0.35rem 0.8rem;
+        letter-spacing: 0.18em;
+      }
+
+      .slm-footer {
+        grid-template-columns: 1fr;
+        padding: 0 1.5rem;
+        gap: 1.5rem;
+      }
+
+      .slm-signature-block {
+        padding-bottom: 1.5rem;
+      }
+
+      .slm-closing {
+        font-size: 0.9rem;
+        margin-bottom: 1.4rem;
+      }
+
+      .slm-sig-lines {
+        width: 160px;
+        margin-bottom: 0.6rem;
+      }
+
+      .slm-sig-name {
+        font-size: 0.95rem;
+        letter-spacing: 0.08em;
+      }
+
+      .slm-sig-title {
+        font-size: 0.85rem;
+        margin-bottom: 0.08rem;
+      }
+
+      .slm-sig-org {
+        font-size: 0.57rem;
+        letter-spacing: 0.18em;
+      }
+
+      .slm-seal-col {
+        align-items: center;
+        padding-bottom: 1.5rem;
+      }
+
+      .slm-wax-seal {
+        width: 105px;
+        height: 105px;
+      }
+
+      .slm-wax-circle {
+        box-shadow:
+          0 8px 32px rgba(100, 15, 15, 0.6),
+          0 2px 8px rgba(0, 0, 0, 0.5),
+          inset 0 4px 10px rgba(255, 140, 140, 0.08),
+          inset 0 -6px 12px rgba(0, 0, 0, 0.4);
+      }
+
+      .slm-wax-logo {
+        width: 65px;
+        height: 65px;
+      }
+
+      .slm-seal-text {
+        font-size: 0.5rem;
+        letter-spacing: 0.18em;
+        line-height: 1.6;
+      }
+
+      .slm-bottom-ribbon {
+        padding: 0.9rem 1.5rem;
+        gap: 0.9rem;
+      }
+
+      .slm-ribbon-text {
+        font-size: 0.56rem;
+        letter-spacing: 0.18em;
+        white-space: normal;
+      }
+
+      .slm-corner-ornament {
+        width: 36px !important;
+        height: 36px !important;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .slm-outer {
+        max-width: 92vw;
+      }
+
+      .slm-header {
+        padding: 2rem 2rem 1.6rem;
       }
 
       .slm-logo-img {
-        width: 95px;
-        height: 95px;
+        width: 100px;
+        height: 100px;
       }
 
-      .slm-title-main {
-        font-size: 1.25rem;
+      .slm-body {
+        padding: 2rem 2rem 1.5rem;
+      }
+
+      .slm-paragraph {
+        font-size: 1.05rem;
+        line-height: 1.9;
+      }
+
+      .slm-quote-text {
+        font-size: 1.15rem;
+      }
+
+      .slm-footer {
+        gap: 1.8rem;
+      }
+
+      .slm-wax-seal {
+        width: 115px;
+        height: 115px;
+      }
+
+      .slm-bottom-ribbon {
+        padding: 1rem 2rem;
       }
     }
   </style>
@@ -2021,7 +2225,7 @@
     <div class="container">
       <div class="contact-title-banner">
         <div class="contact-title-line"></div>
-        <div class="contact-title-center">
+        <div class="contact-title-center" style="width: 100%;">
           <span class="contact-title-tag">&#9670; SIMATS MUN 2026 &#9670;</span>
           <h2 class="contact-title-main">Delegate Correspondence</h2>
           <p class="contact-title-sub">Open Floor for Inquiries &amp; Diplomatic Dialogue</p>

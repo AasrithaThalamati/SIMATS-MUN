@@ -2443,3 +2443,218 @@ a.contact-info-value:hover { color: var(--light-gold); }
     .hero-stat-sep { display: none; }
     .hero-crest { opacity: 0.5; }
 }
+/* ================================================================
+   HAMBURGER SIDEBAR — ADD THESE TO THE END OF styles.css
+   ================================================================ */
+
+/* ── Sidebar Overlay ── */
+.nav-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(20, 3, 8, 0.75);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+}
+
+.nav-overlay.active {
+    display: block;
+    opacity: 1;
+}
+
+/* ── Hamburger Icon — animated X ── */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    position: relative;
+    z-index: 1001;
+    flex-shrink: 0;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background-color: var(--gold);
+    transition: all 0.35s cubic-bezier(0.23, 1, 0.32, 1);
+    border-radius: 2px;
+    transform-origin: center;
+}
+
+/* Animate into X when active */
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+    transform: scaleX(0);
+}
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Sidebar Panel ── */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        /* Override the old dropdown style */
+        position: fixed !important;
+        top: 0 !important;
+        right: -100% !important;
+        left: auto !important;
+        width: min(300px, 82vw) !important;
+        height: 100dvh !important;
+        flex-direction: column !important;
+        background: linear-gradient(160deg, #2a0505 0%, var(--deep-burgundy) 40%, #1a0303 100%) !important;
+        border-left: 1px solid rgba(200, 168, 85, 0.3) !important;
+        border-top: none !important;
+        padding: 0 !important;
+        gap: 0 !important;
+        overflow-y: auto !important;
+        z-index: 999 !important;
+        transition: right 0.4s cubic-bezier(0.23, 1, 0.32, 1) !important;
+        box-shadow: -12px 0 50px rgba(0, 0, 0, 0.6) !important;
+    }
+
+    .nav-menu.active {
+        right: 0 !important;
+    }
+
+    /* Sidebar header area */
+    .nav-menu::before {
+        content: 'SIMATS MUN';
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 1.6rem 1.5rem 1.2rem;
+        font-family: 'Playfair Display', serif;
+        font-size: 1.1rem;
+        font-weight: 800;
+        color: var(--gold);
+        letter-spacing: 3px;
+        border-bottom: 1px solid rgba(200, 168, 85, 0.2);
+        margin-bottom: 0.5rem;
+        text-align: center;
+    }
+
+    /* Gold top accent line */
+    .nav-menu::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: linear-gradient(90deg, transparent, var(--gold), var(--light-gold), var(--gold), transparent);
+    }
+
+    /* Nav items */
+    .nav-menu li {
+        width: 100%;
+        border-bottom: 1px solid rgba(200, 168, 85, 0.08);
+        transform: translateX(30px);
+        opacity: 0;
+        transition: transform 0.4s ease, opacity 0.4s ease;
+    }
+
+    .nav-menu.active li {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Staggered animation for each item */
+    .nav-menu.active li:nth-child(1) { transition-delay: 0.05s; }
+    .nav-menu.active li:nth-child(2) { transition-delay: 0.10s; }
+    .nav-menu.active li:nth-child(3) { transition-delay: 0.15s; }
+    .nav-menu.active li:nth-child(4) { transition-delay: 0.20s; }
+    .nav-menu.active li:nth-child(5) { transition-delay: 0.25s; }
+    .nav-menu.active li:nth-child(6) { transition-delay: 0.30s; }
+
+    .nav-menu a {
+        display: flex !important;
+        align-items: center;
+        padding: 1rem 1.8rem !important;
+        font-size: 1rem !important;
+        letter-spacing: 1.5px;
+        color: rgba(245, 241, 232, 0.85) !important;
+        transition: all 0.25s ease !important;
+        position: relative;
+    }
+
+    .nav-menu a::before {
+        content: '◆';
+        font-size: 0.45rem;
+        color: rgba(200, 168, 85, 0.4);
+        margin-right: 0.8rem;
+        transition: color 0.25s ease;
+        flex-shrink: 0;
+    }
+
+    .nav-menu a::after {
+        display: none !important;
+    }
+
+    .nav-menu a:hover {
+        color: var(--gold) !important;
+        background: rgba(200, 168, 85, 0.07) !important;
+        padding-left: 2.2rem !important;
+    }
+
+    .nav-menu a:hover::before {
+        color: var(--gold);
+    }
+
+    /* Register button inside sidebar */
+    .nav-menu li:last-child {
+        padding: 1.5rem 1.8rem;
+        border-bottom: none;
+    }
+
+    .register-nav-btn {
+        display: flex !important;
+        justify-content: center;
+        width: 100% !important;
+        padding: 0.75rem 1.5rem !important;
+        border-radius: 8px !important;
+        font-size: 0.9rem !important;
+        text-align: center;
+        background: var(--gold) !important;
+        color: var(--burgundy) !important;
+        box-shadow: 0 4px 18px rgba(200, 168, 85, 0.25) !important;
+    }
+
+    .register-nav-btn::before {
+        display: none !important;
+    }
+
+    .register-nav-btn:hover {
+        background: var(--light-gold) !important;
+        transform: none !important;
+        padding-left: 1.5rem !important;
+    }
+
+    /* Sidebar social footer */
+    .nav-sidebar-footer {
+        margin-top: auto;
+        padding: 1.5rem 1.8rem;
+        border-top: 1px solid rgba(200, 168, 85, 0.15);
+        font-family: 'Libre Baskerville', serif;
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        color: rgba(200, 168, 85, 0.35);
+        text-align: center;
+        text-transform: uppercase;
+    }
+}

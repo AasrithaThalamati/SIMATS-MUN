@@ -67,22 +67,62 @@ window.dispatchEvent(new Event('scroll'));
 // MOBILE NAVIGATION TOGGLE
 // ===============================================
 
+// ================================================================
+//  HAMBURGER SIDEBAR — REPLACE the "MOBILE NAVIGATION TOGGLE"
+//  section in script.js with this block
+// ================================================================
+
+// ===============================================
+// MOBILE NAVIGATION TOGGLE — SIDEBAR VERSION
+// ===============================================
+
 const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
+const navMenu   = document.getElementById('nav-menu');
+const navOverlay = document.getElementById('nav-overlay');
+
+function openSidebar() {
+    navMenu.classList.add('active');
+    navToggle.classList.add('active');
+    if (navOverlay) navOverlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+}
+
+function closeSidebar() {
+    navMenu.classList.remove('active');
+    navToggle.classList.remove('active');
+    if (navOverlay) navOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+}
 
 if (navToggle) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
+        if (navMenu.classList.contains('active')) {
+            closeSidebar();
+        } else {
+            openSidebar();
+        }
     });
 }
 
+// Close on overlay click
+if (navOverlay) {
+    navOverlay.addEventListener('click', closeSidebar);
+}
+
+// Close on nav link click
 const navLinks = document.querySelectorAll('.nav-menu a');
 navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        navMenu.classList.remove('active');
-        navToggle.classList.remove('active');
-    });
+    link.addEventListener('click', closeSidebar);
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeSidebar();
+});
+
+// Close sidebar if window resizes above mobile breakpoint
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768) closeSidebar();
 });
 
 // ===============================================

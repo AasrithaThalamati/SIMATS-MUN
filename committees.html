@@ -9,6 +9,15 @@
 </head>
 <body>
 
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- GOLD RIBBON TOP -->
+    <div class="gold-ribbon-top" id="goldRibbon">
+        <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> FIVE DISTINGUISHED COMMITTEES <span>◆</span> UNHRC · ECOFIN · AIPPM · UNCSW · IPC <span>◆</span> SAVEETHA UNIVERSITY · CHENNAI <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> FIVE DISTINGUISHED COMMITTEES <span>◆</span> UNHRC · ECOFIN · AIPPM · UNCSW · IPC <span>◆</span> SAVEETHA UNIVERSITY · CHENNAI <span>◆</span>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,9 +30,10 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="committees.html" class="nav-active">Committees</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html#register" class="register-nav-btn">Register</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="register-nav-btn">Register</a></li>
             </ul>
         </div>
+        <div class="nav-progress" id="navProgress"></div>
     </nav>
 
     <!-- HERO -->
@@ -31,6 +41,10 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-particles" id="heroParticles"></div>
+        <!-- Floating orbs -->
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
 
         <div class="hero-content">
             <p class="hero-eyebrow">Saveetha University · SIMATS Engineering</p>
@@ -57,8 +71,17 @@
         </div>
     </header>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center"><span class="od-gem">◆</span><span class="od-text">OVERVIEW</span><span class="od-gem">◆</span></div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- INTRO STRIP -->
     <section class="intro-section">
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-tr">✦</div>
         <div class="container">
             <div class="intro-block" data-animate>
                 <div class="intro-ornament-top"></div>
@@ -85,13 +108,25 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center"><span class="od-gem od-gem-dark">◆</span><span class="od-text od-text-dark">COMMITTEES</span><span class="od-gem od-gem-dark">◆</span></div>
+        <div class="od-line od-line-dark"></div>
+    </div>
+
     <!-- COMMITTEE 1 — UNHRC -->
     <section class="committee-section dark-section" id="unhrc">
         <div class="section-bg-map"></div>
+        <div class="committee-section-label">01</div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="committee-block" data-animate>
                 <div class="committee-left">
                     <div class="committee-emblem-wrap">
+                        <div class="emblem-ring-outer"></div>
+                        <div class="emblem-ring-inner"></div>
                         <img src="UNHRC1bg.png" alt="UNHRC Logo" class="committee-emblem" onerror="this.style.display='none'">
                         <div class="emblem-fallback"><span>UNHRC</span></div>
                     </div>
@@ -104,7 +139,7 @@
                             <div class="qs-item"><span class="qs-icon">⚖️</span><span>Human Rights Law</span></div>
                             <div class="qs-item"><span class="qs-icon">📜</span><span>Resolution-Based</span></div>
                         </div>
-                        <a href="index.html#register" class="register-btn">Register for UNHRC →</a>
+                        
                     </div>
                 </div>
 
@@ -131,12 +166,22 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center"><span class="od-gem od-gem-dark">◆</span><span class="od-text od-text-dark">ECOFIN</span><span class="od-gem od-gem-dark">◆</span></div>
+        <div class="od-line od-line-dark"></div>
+    </div>
+
     <!-- COMMITTEE 2 — ECOFIN -->
     <section class="committee-section light-section" id="ecofin">
+        <div class="committee-section-label committee-section-label-dark">02</div>
         <div class="container">
             <div class="committee-block committee-block-reverse" data-animate>
                 <div class="committee-left">
                     <div class="committee-emblem-wrap">
+                        <div class="emblem-ring-outer emblem-ring-dark"></div>
+                        <div class="emblem-ring-inner emblem-ring-inner-dark"></div>
                         <img src="ECOFIN-ORGbg.png" alt="ECOFIN Logo" class="committee-emblem" onerror="this.style.display='none'">
                         <div class="emblem-fallback emblem-fallback-dark"><span>ECOFIN</span></div>
                     </div>
@@ -149,7 +194,7 @@
                             <div class="qs-item qs-item-dark"><span class="qs-icon">🏦</span><span>Economic Policy</span></div>
                             <div class="qs-item qs-item-dark"><span class="qs-icon">🗳️</span><span>Consensus Building</span></div>
                         </div>
-                        <a href="index.html#register" class="register-btn register-btn-dark">Register for ECOFIN →</a>
+                        
                     </div>
                 </div>
 
@@ -176,13 +221,25 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center"><span class="od-gem">◆</span><span class="od-text">AIPPM</span><span class="od-gem">◆</span></div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- COMMITTEE 3 — AIPPM -->
     <section class="committee-section dark-section" id="aippm">
         <div class="section-bg-map"></div>
+        <div class="committee-section-label">03</div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="committee-block" data-animate>
                 <div class="committee-left">
                     <div class="committee-emblem-wrap">
+                        <div class="emblem-ring-outer"></div>
+                        <div class="emblem-ring-inner"></div>
                         <img src="AIPPM-ORG1-bg.png" alt="AIPPM Logo" class="committee-emblem" onerror="this.style.display='none'">
                         <div class="emblem-fallback"><span>AIPPM</span></div>
                     </div>
@@ -195,7 +252,7 @@
                             <div class="qs-item"><span class="qs-icon">⚡</span><span>High Intensity</span></div>
                             <div class="qs-item"><span class="qs-icon">🏛️</span><span>Parliamentary</span></div>
                         </div>
-                        <a href="index.html#register" class="register-btn">Register for AIPPM →</a>
+                        
                     </div>
                 </div>
 
@@ -222,12 +279,22 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center"><span class="od-gem od-gem-dark">◆</span><span class="od-text od-text-dark">UNCSW</span><span class="od-gem od-gem-dark">◆</span></div>
+        <div class="od-line od-line-dark"></div>
+    </div>
+
     <!-- COMMITTEE 4 — UNCSW -->
     <section class="committee-section light-section" id="uncsw">
+        <div class="committee-section-label committee-section-label-dark">04</div>
         <div class="container">
             <div class="committee-block committee-block-reverse" data-animate>
                 <div class="committee-left">
                     <div class="committee-emblem-wrap">
+                        <div class="emblem-ring-outer emblem-ring-dark"></div>
+                        <div class="emblem-ring-inner emblem-ring-inner-dark"></div>
                         <img src="UNCSW-ORG1-bg.png" alt="UNCSW Logo" class="committee-emblem" onerror="this.style.display='none'">
                         <div class="emblem-fallback emblem-fallback-dark"><span>UNCSW</span></div>
                     </div>
@@ -240,7 +307,7 @@
                             <div class="qs-item qs-item-dark"><span class="qs-icon">🌐</span><span>International</span></div>
                             <div class="qs-item qs-item-dark"><span class="qs-icon">📜</span><span>Resolution-Based</span></div>
                         </div>
-                        <a href="index.html#register" class="register-btn register-btn-dark">Register for UNCSW →</a>
+                       
                     </div>
                 </div>
 
@@ -267,13 +334,25 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center"><span class="od-gem">◆</span><span class="od-text">IPC</span><span class="od-gem">◆</span></div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- COMMITTEE 5 — IPC -->
     <section class="committee-section dark-section" id="ipc">
         <div class="section-bg-map"></div>
+        <div class="committee-section-label">05</div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="committee-block" data-animate>
                 <div class="committee-left">
                     <div class="committee-emblem-wrap">
+                        <div class="emblem-ring-outer emblem-ring-ipc"></div>
+                        <div class="emblem-ring-inner emblem-ring-inner-ipc"></div>
                         <img src="IPC.png" alt="IPC Logo" class="committee-emblem" onerror="this.style.display='none'">
                         <div class="emblem-fallback"><span>IPC</span></div>
                     </div>
@@ -313,6 +392,13 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center"><span class="od-gem od-gem-dark">◆</span><span class="od-text od-text-dark">STRUCTURE</span><span class="od-gem od-gem-dark">◆</span></div>
+        <div class="od-line od-line-dark"></div>
+    </div>
+
     <!-- COMMITTEE STRUCTURE -->
     <section class="section structure-section">
         <div class="container">
@@ -324,30 +410,94 @@
             </div>
 
             <div class="structure-grid" data-animate>
+
+                <!-- Card 1: Executive Board Leadership -->
                 <div class="structure-card">
                     <div class="sc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.8"/><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <!-- Premium crown/leadership icon -->
+                        <svg viewBox="0 0 48 48" fill="none" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Crown base -->
+                            <path d="M8 34 L40 34 L37 20 L29 28 L24 14 L19 28 L11 20 Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" fill="none"/>
+                            <!-- Crown base band -->
+                            <rect x="8" y="34" width="32" height="5" rx="1.5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                            <!-- Crown jewels -->
+                            <circle cx="24" cy="20" r="2" fill="currentColor" opacity="0.85"/>
+                            <circle cx="11" cy="20" r="1.5" fill="currentColor" opacity="0.65"/>
+                            <circle cx="37" cy="20" r="1.5" fill="currentColor" opacity="0.65"/>
+                            <!-- Gem highlight dots on band -->
+                            <circle cx="18" cy="36.5" r="1.2" fill="currentColor" opacity="0.55"/>
+                            <circle cx="24" cy="36.5" r="1.2" fill="currentColor" opacity="0.55"/>
+                            <circle cx="30" cy="36.5" r="1.2" fill="currentColor" opacity="0.55"/>
+                        </svg>
                     </div>
                     <h4>Executive Board Leadership</h4>
                     <p>Each committee is presided over by a dedicated Chair and Vice-Chair who manage sessions, maintain procedural order, evaluate delegate performance, and ensure the highest standards of diplomatic discourse.</p>
                 </div>
+
+                <!-- Card 2: Country & Role Portfolios -->
                 <div class="structure-card">
                     <div class="sc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.8"/><line x1="2" y1="12" x2="22" y2="12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <!-- Premium globe / world icon -->
+                        <svg viewBox="0 0 48 48" fill="none" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Globe circle -->
+                            <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="1.6"/>
+                            <!-- Latitude lines -->
+                            <ellipse cx="24" cy="24" rx="7" ry="16" stroke="currentColor" stroke-width="1.4"/>
+                            <line x1="8" y1="24" x2="40" y2="24" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+                            <path d="M10 17 Q24 20 38 17" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+                            <path d="M10 31 Q24 28 38 31" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" fill="none"/>
+                            <!-- Pin marker on globe -->
+                            <circle cx="33" cy="16" r="3.5" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                            <circle cx="33" cy="16" r="1.2" fill="currentColor" opacity="0.8"/>
+                            <line x1="33" y1="19.5" x2="33" y2="23" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+                        </svg>
                     </div>
                     <h4>Country &amp; Role Portfolios</h4>
                     <p>Delegates are assigned specific country portfolios or political party roles prior to the conference, reflecting a balance of global representation to ensure each perspective is meaningfully heard.</p>
                 </div>
+
+                <!-- Card 3: Rules of Procedure -->
                 <div class="structure-card">
                     <div class="sc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><polyline points="14 2 14 8 20 8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+                        <!-- Premium scroll/document with seal icon -->
+                        <svg viewBox="0 0 48 48" fill="none" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Scroll body -->
+                            <rect x="12" y="10" width="24" height="30" rx="2.5" stroke="currentColor" stroke-width="1.6" fill="none"/>
+                            <!-- Scroll curl top -->
+                            <path d="M12 13 Q8 13 8 17 Q8 21 12 21" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                            <!-- Scroll curl bottom -->
+                            <path d="M36 35 Q40 35 40 31 Q40 27 36 27" stroke="currentColor" stroke-width="1.4" fill="none" stroke-linecap="round"/>
+                            <!-- Text lines -->
+                            <line x1="18" y1="18" x2="30" y2="18" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.9"/>
+                            <line x1="18" y1="23" x2="30" y2="23" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.7"/>
+                            <line x1="18" y1="28" x2="26" y2="28" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" opacity="0.55"/>
+                            <!-- Wax seal -->
+                            <circle cx="30" cy="34" r="4" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                            <path d="M28 34 L30 32 L32 34 L30 36 Z" fill="currentColor" opacity="0.7"/>
+                        </svg>
                     </div>
                     <h4>Rules of Procedure</h4>
                     <p>All committees operate according to a standard set of MUN Rules of Procedure governing speakers lists, moderated and unmoderated caucuses, motion procedures, and voting mechanisms.</p>
                 </div>
+
+                <!-- Card 4: Resolutions & Directives -->
                 <div class="structure-card">
                     <div class="sc-icon">
-                        <svg viewBox="0 0 24 24" fill="none" width="26" height="26"><polyline points="9 11 12 14 22 4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        <!-- Premium resolution/quill & gavel icon -->
+                        <svg viewBox="0 0 48 48" fill="none" width="32" height="32" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Gavel head -->
+                            <rect x="26" y="10" width="14" height="8" rx="2" stroke="currentColor" stroke-width="1.6" transform="rotate(45 26 10)" fill="none"/>
+                            <!-- Gavel handle -->
+                            <line x1="22" y1="26" x2="10" y2="38" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+                            <!-- Sound block -->
+                            <rect x="8" y="34" width="14" height="5" rx="1.5" stroke="currentColor" stroke-width="1.4" fill="none"/>
+                            <!-- Quill feather -->
+                            <path d="M34 16 Q42 8 42 6 Q40 6 32 14 Q28 20 26 28 Q30 26 34 16Z" stroke="currentColor" stroke-width="1.3" fill="none" stroke-linejoin="round"/>
+                            <!-- Quill tip -->
+                            <path d="M26 28 L24 34 L28 30 Z" fill="currentColor" opacity="0.7"/>
+                            <!-- Ratification star -->
+                            <path d="M39 32 L40.2 35.6 L44 35.6 L41 37.8 L42.2 41.4 L39 39.2 L35.8 41.4 L37 37.8 L34 35.6 L37.8 35.6 Z" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.75"/>
+                        </svg>
                     </div>
                     <h4>Resolutions &amp; Directives</h4>
                     <p>The culmination of each session is the drafting, debating, and voting on resolutions. These documents represent the collective diplomatic output of the committee and form part of delegate assessment.</p>
@@ -375,6 +525,7 @@
     <section class="closing-section">
         <div class="closing-bg"></div>
         <div class="closing-overlay"></div>
+        <div class="closing-sparks" id="closingSparks"></div>
         <div class="container">
             <div class="closing-content" data-animate>
                 <div class="closing-ornament">◆ ◆ ◆</div>
@@ -382,7 +533,7 @@
                 <div class="title-underline" style="margin:1.2rem auto;"></div>
                 <p class="closing-body">The committees of SIMATS MUN 2026 are designed with singular purpose — to challenge the intellect, strengthen the diplomatic character, and cultivate the globally aware leaders that our world demands. Whether deliberating on human rights in conflict zones, advancing gender equality, navigating India's most contentious policy debates, or chronicling the pulse of diplomacy through the press, every delegate will emerge transformed.</p>
                 <div class="closing-ctas">
-                    <a href="index.html#register" class="cta-btn cta-primary">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="cta-btn cta-primary">Register Now</a>
                     <a href="about.html" class="cta-btn cta-secondary">Learn More</a>
                 </div>
             </div>
@@ -412,7 +563,7 @@
                         <li><a href="about.html">→ About</a></li>
                         <li><a href="committees.html">→ Committees</a></li>
                         <li><a href="contact.html">→ Contact</a></li>
-                        <li><a href="index.html#register">→ Register</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse">→ Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -444,6 +595,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
     <script src="committees.js"></script>
 </body>

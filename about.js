@@ -247,5 +247,243 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.opacity = '1';
     });
 
+    /* ══════════════════════════════════════
+       ENHANCEMENT SCRIPTS
+    ══════════════════════════════════════ */
+
+    /* ── E1. CUSTOM CURSOR ── */
+    const cursorDot  = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+
+    if (cursorDot && cursorRing && window.matchMedia('(hover: hover)').matches) {
+        let dotX = 0, dotY = 0;
+        let ringX = 0, ringY = 0;
+
+        document.addEventListener('mousemove', (e) => {
+            dotX = e.clientX;
+            dotY = e.clientY;
+        });
+
+        const animateCursor = () => {
+            // dot follows instantly
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top  = dotY + 'px';
+
+            // ring lags slightly
+            ringX += (dotX - ringX) * 0.12;
+            ringY += (dotY - ringY) * 0.12;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top  = ringY + 'px';
+
+            requestAnimationFrame(animateCursor);
+        };
+        animateCursor();
+
+        // Hover effect on interactive elements
+        const hoverEls = document.querySelectorAll('a, button, .value-pill, .vm-card, .elig-card, .rule-card, .sec-role, .tl-card, .process-step');
+        hoverEls.forEach(el => {
+            el.addEventListener('mouseenter', () => cursorRing.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hovering'));
+        });
+
+        document.addEventListener('mouseleave', () => {
+            cursorDot.style.opacity  = '0';
+            cursorRing.style.opacity = '0';
+        });
+        document.addEventListener('mouseenter', () => {
+            cursorDot.style.opacity  = '1';
+            cursorRing.style.opacity = '1';
+        });
+    }
+
+    /* ── E2. SCROLL PROGRESS BAR ── */
+    const navProgress = document.getElementById('navProgress');
+    if (navProgress) {
+        const updateProgress = () => {
+            const scrollTop    = window.scrollY;
+            const docHeight    = document.documentElement.scrollHeight - window.innerHeight;
+            const progress     = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+            navProgress.style.width = progress + '%';
+        };
+        window.addEventListener('scroll', updateProgress, { passive: true });
+    }
+
+    /* ── E3. HERO TYPEWRITER ── */
+    const typewriterEl = document.getElementById('heroTypewriter');
+    if (typewriterEl) {
+        const phrases = [
+            'Where Diplomacy Meets Leadership',
+            'Debate. Negotiate. Resolve.',
+            'Forging Tomorrow\'s Global Leaders',
+            'Your Voice on the World Stage'
+        ];
+        let phraseIndex = 0;
+        let charIndex   = 0;
+        let isDeleting  = false;
+        let isPaused    = false;
+
+        const type = () => {
+            const current = phrases[phraseIndex];
+
+            if (isDeleting) {
+                charIndex--;
+                typewriterEl.textContent = current.slice(0, charIndex);
+            } else {
+                charIndex++;
+                typewriterEl.textContent = current.slice(0, charIndex);
+            }
+
+            let delay = isDeleting ? 40 : 70;
+
+            if (!isDeleting && charIndex === current.length) {
+                delay = 2200;
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                delay = 400;
+            }
+
+            setTimeout(type, delay);
+        };
+
+        setTimeout(type, 1200);
+    }
+
+    /* ── E4. ANIMATED STATS COUNTER ── */
+    const statNums = document.querySelectorAll('.stat-num');
+
+    const countObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const el     = entry.target;
+                const target = parseInt(el.dataset.target || 0);
+                const dur    = 1600;
+                const step   = dur / target;
+                let current  = 0;
+
+                const timer = setInterval(() => {
+                    current++;
+                    el.textContent = current;
+                    if (current >= target) clearInterval(timer);
+                }, step);
+
+                countObserver.unobserve(el);
+            }
+        });
+    }, { threshold: 0.6 });
+
+    statNums.forEach(el => countObserver.observe(el));
+
+    /* ── E5. CLOSING SECTION SPARKS ── */
+    const sparksContainer = document.getElementById('closingSparks');
+    if (sparksContainer) {
+        const sparkCount = 22;
+        for (let i = 0; i < sparkCount; i++) {
+            const s = document.createElement('div');
+            s.className = 'closing-spark';
+            const drift = (Math.random() - 0.5) * 80;
+            s.style.cssText = `
+                left:    ${5 + Math.random() * 90}%;
+                bottom:  ${Math.random() * 40}%;
+                --dur:   ${5 + Math.random() * 8}s;
+                --delay: ${Math.random() * 6}s;
+                --drift: ${drift}px;
+                width:   ${1 + Math.random() * 3}px;
+                height:  ${1 + Math.random() * 3}px;
+            `;
+            sparksContainer.appendChild(s);
+        }
+    }
+
+    /* ── E6. BACK TO TOP BUTTON ── */
+    const backToTop = document.getElementById('backToTop');
+    if (backToTop) {
+        const toggleBTT = () => {
+            if (window.scrollY > 400) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        };
+        window.addEventListener('scroll', toggleBTT, { passive: true });
+
+        backToTop.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
+    /* ── E7. RIBBON SCROLL ── */
+    // Make ribbon marquee smoother by cloning content
+    const ribbon = document.querySelector('.gold-ribbon-top');
+    if (ribbon) {
+        // Disable CSS animation, use JS marquee instead
+        ribbon.style.animation = 'none';
+        ribbon.style.overflow  = 'hidden';
+        ribbon.style.whiteSpace = 'nowrap';
+        ribbon.style.display   = 'block';
+
+        const original = ribbon.innerHTML;
+        ribbon.innerHTML = original + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + original;
+
+        let pos = 0;
+        const totalWidth = ribbon.scrollWidth / 2;
+        const speed = 0.6;
+
+        const scrollRibbon = () => {
+            pos += speed;
+            if (pos >= totalWidth) pos = 0;
+            ribbon.style.transform = `translateX(-${pos}px)`;
+            requestAnimationFrame(scrollRibbon);
+        };
+        requestAnimationFrame(scrollRibbon);
+    }
+
+    /* ── E8. PARALLAX SUBTLE on HERO BG ── */
+    const heroBg = document.querySelector('.hero-bg');
+    if (heroBg) {
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            heroBg.style.transform = `translateY(${scrollY * 0.25}px)`;
+        }, { passive: true });
+    }
+
+    /* ── E9. ORNATE DIVIDER REVEAL ── */
+    const dividers = document.querySelectorAll('.ornate-divider');
+    const dividerObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity   = '1';
+                entry.target.style.transform = 'scaleX(1)';
+                dividerObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.5 });
+
+    dividers.forEach(d => {
+        d.style.opacity   = '0';
+        d.style.transform = 'scaleX(0.85)';
+        d.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        dividerObserver.observe(d);
+    });
+
+    /* ── E10. TILT EFFECT on VM & Elig Cards ── */
+    const tiltCards = document.querySelectorAll('.vm-card, .elig-card');
+    tiltCards.forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect   = card.getBoundingClientRect();
+            const cx     = rect.left + rect.width  / 2;
+            const cy     = rect.top  + rect.height / 2;
+            const dx     = (e.clientX - cx) / (rect.width  / 2);
+            const dy     = (e.clientY - cy) / (rect.height / 2);
+            const rotX   = -dy * 4;
+            const rotY   =  dx * 4;
+            card.style.transform = `perspective(800px) rotateX(${rotX}deg) rotateY(${rotY}deg) translateY(-5px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = '';
+        });
+    });
+
     console.log('SIMATS MUN 2026 — About page initialised ✔');
 });

@@ -10,6 +10,15 @@
 </head>
 <body>
 
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- GOLD RIBBON TOP -->
+    <div class="gold-ribbon-top" id="goldRibbon">
+        <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> CONTACT THE SECRETARIAT <span>◆</span> simatsmun@gmail.com <span>◆</span> +91 7010900174 <span>◆</span> 25–26 APRIL 2026 <span>◆</span> SAVEETHA UNIVERSITY · CHENNAI <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> CONTACT THE SECRETARIAT <span>◆</span> simatsmun@gmail.com <span>◆</span> +91 7010900174 <span>◆</span> 25–26 APRIL 2026 <span>◆</span>
+    </div>
+
     <!-- ═══════ NAVIGATION ═══════ -->
     <nav class="navbar">
         <div class="nav-container container">
@@ -24,9 +33,10 @@
                 <li><a href="about.html">About</a></li>
                 <li><a href="committees.html">Committees</a></li>
                 <li><a href="contact.html" class="nav-active">Contact</a></li>
-                <li><a href="index.html#register" class="register-nav-btn">Register</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="register-nav-btn">Register</a></li>
             </ul>
         </div>
+        <div class="nav-progress" id="navProgress"></div>
     </nav>
 
     <!-- ═══════ HERO ═══════ -->
@@ -34,6 +44,11 @@
         <div class="contact-hero-bg"></div>
         <div class="contact-hero-overlay"></div>
         <div class="contact-hero-particles" id="particles"></div>
+
+        <!-- Floating orbs -->
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
 
         <!-- Corner flourishes -->
         <div class="hero-corner hero-corner-tl">
@@ -92,7 +107,7 @@
 
             <div class="contact-hero-stats">
                 <div class="hero-stat">
-                    <span class="hero-stat-num">24–48h</span>
+                    <span class="hero-stat-num" data-target-text="24–48h">24–48h</span>
                     <span class="hero-stat-lbl">Response Time</span>
                 </div>
                 <div class="hero-stat-sep">◆</div>
@@ -126,6 +141,13 @@
             <span>Scroll to Explore</span>
         </div>
     </section>
+
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center"><span class="od-gem">◆</span><span class="od-text">OFFICIAL CHANNELS</span><span class="od-gem">◆</span></div>
+        <div class="od-line od-line-r"></div>
+    </div>
 
     <!-- ═══════ SECTION 1 — GENERAL CONTACT INFORMATION ═══════ -->
     <section class="contact-info-section-full">
@@ -218,10 +240,19 @@
         </div>
     </section>
 
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider ornate-divider-light">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center"><span class="od-gem od-gem-dark">◆</span><span class="od-text od-text-dark">VENUE</span><span class="od-gem od-gem-dark">◆</span></div>
+        <div class="od-line od-line-dark od-line-r"></div>
+    </div>
+
     <!-- ═══════ SECTION 2 — VENUE ═══════ -->
     <section class="venue-section">
         <div class="venue-bg"></div>
         <div class="venue-bg-map"></div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="section-header">
                 <span class="section-eyebrow">Conference Venue</span>
@@ -284,6 +315,7 @@
                         <div class="map-inner">
                             <div class="map-pin-wrap">
                                 <div class="map-pin-pulse"></div>
+                                <div class="map-pin-pulse map-pin-pulse-2"></div>
                                 <div class="map-pin">
                                     <svg viewBox="0 0 24 24" fill="none" width="44" height="44"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 7.61305 3.94821 5.32387 5.63604 3.63604C7.32387 1.94821 9.61305 1 12 1C14.3869 1 16.6761 1.94821 18.364 3.63604C20.0518 5.32387 21 7.61305 21 10Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="rgba(71,11,11,0.08)"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="1.5"/></svg>
                                 </div>
@@ -299,7 +331,14 @@
         </div>
     </section>
 
-    <!-- ═══════ SECTION 3 — SOCIAL MEDIA (Instagram + Email only) ═══════ -->
+    <!-- ORNATE DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center"><span class="od-gem">◆</span><span class="od-text">STAY CONNECTED</span><span class="od-gem">◆</span></div>
+        <div class="od-line od-line-r"></div>
+    </div>
+
+    <!-- ═══════ SECTION 3 — SOCIAL MEDIA ═══════ -->
     <section class="social-section">
         <div class="social-bg"></div>
         <div class="container">
@@ -317,7 +356,7 @@
             </p>
 
             <div class="social-platforms">
-                <a href="#" class="social-platform-card">
+                <a href="https://www.instagram.com/simats.mun/" target="_blank" class="social-platform-card">
                     <div class="social-card-glow"></div>
                     <div class="platform-icon-wrap">
                         <div class="platform-icon">
@@ -327,7 +366,7 @@
                     <div class="platform-content">
                         <div class="platform-info">
                             <h4>Instagram</h4>
-                            <p>@simatsmun2026</p>
+                            <p>@simats.mun</p>
                         </div>
                         <span class="platform-desc">Visual updates, committee highlights, and delegate spotlights from the floor of diplomacy.</span>
                         <div class="platform-cta">Follow us <span>→</span></div>
@@ -385,6 +424,9 @@
     <section class="closing-banner">
         <div class="closing-bg"></div>
         <div class="closing-overlay"></div>
+        <div class="closing-sparks" id="closingSparks"></div>
+        <div class="corner-ornament corner-tl closing-corner">✦</div>
+        <div class="corner-ornament corner-br closing-corner">✦</div>
         <div class="container">
             <div class="closing-content">
                 <div class="closing-ornament-top"></div>
@@ -396,7 +438,7 @@
                 </blockquote>
                 <p class="closing-attribution">— The Secretariat, SIMATS MUN 2026</p>
                 <div class="closing-actions">
-                    <a href="index.html#register" class="closing-cta primary-btn cta-button">
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="closing-cta primary-btn cta-button">
                         <span>Register Now</span>
                         <div class="btn-shine"></div>
                     </a>
@@ -430,7 +472,7 @@
                         <li><a href="index.html"><span class="link-arrow">→</span> Home</a></li>
                         <li><a href="about.html"><span class="link-arrow">→</span> About</a></li>
                         <li><a href="committees.html"><span class="link-arrow">→</span> Committees</a></li>
-                        <li><a href="index.html#register"><span class="link-arrow">→</span> Register</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse"><span class="link-arrow">→</span> Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">

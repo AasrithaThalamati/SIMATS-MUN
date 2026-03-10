@@ -9,6 +9,15 @@
 </head>
 <body>
 
+    <!-- CUSTOM CURSOR -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-ring" id="cursorRing"></div>
+
+    <!-- GOLD RIBBON TOP -->
+    <div class="gold-ribbon-top">
+        <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> SAVEETHA UNIVERSITY · CHENNAI <span>◆</span> WHERE DIPLOMACY MEETS LEADERSHIP <span>◆</span> SIMATS MODEL UNITED NATIONS 2026 <span>◆</span> SAVEETHA UNIVERSITY · CHENNAI <span>◆</span> WHERE DIPLOMACY MEETS LEADERSHIP <span>◆</span>
+    </div>
+
     <!-- NAVBAR -->
     <nav class="navbar">
         <div class="nav-container">
@@ -21,9 +30,11 @@
                 <li><a href="about.html" class="nav-active">About</a></li>
                 <li><a href="committees.html">Committees</a></li>
                 <li><a href="contact.html">Contact</a></li>
-                <li><a href="index.html#register" class="register-nav-btn">Register</a></li>
+                <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="register-nav-btn">Register</a></li>
             </ul>
         </div>
+        <!-- Nav progress bar -->
+        <div class="nav-progress" id="navProgress"></div>
     </nav>
 
     <!-- HERO -->
@@ -31,6 +42,10 @@
         <div class="hero-bg"></div>
         <div class="hero-overlay"></div>
         <div class="hero-particles" id="heroParticles"></div>
+        <!-- NEW: floating orbs -->
+        <div class="hero-orb hero-orb-1"></div>
+        <div class="hero-orb hero-orb-2"></div>
+        <div class="hero-orb hero-orb-3"></div>
         <div class="hero-content">
             <p class="hero-eyebrow">Saveetha University · SIMATS Engineering</p>
             <h1 class="hero-title">About<br><span class="hero-title-gold">SIMATS MUN 2026</span></h1>
@@ -39,7 +54,29 @@
                 <span class="divider-gem">◆</span>
                 <span class="divider-line"></span>
             </div>
-            <p class="hero-tagline">Where Diplomacy Meets Leadership</p>
+            <p class="hero-tagline" id="heroTypewriter"></p>
+        </div>
+        <!-- NEW: Hero stats strip -->
+        <div class="hero-stats-strip">
+            <div class="hero-stat">
+                <span class="stat-num" data-target="5">0</span>
+                <span class="stat-label">Committees</span>
+            </div>
+            <div class="hero-stat-divider">◆</div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="200">0</span><span class="stat-plus">+</span>
+                <span class="stat-label">Delegates</span>
+            </div>
+            <div class="hero-stat-divider">◆</div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="2">0</span>
+                <span class="stat-label">Days</span>
+            </div>
+            <div class="hero-stat-divider">◆</div>
+            <div class="hero-stat">
+                <span class="stat-num" data-target="1">0</span>
+                <span class="stat-label">Inaugural Edition</span>
+            </div>
         </div>
         <div class="hero-scroll-hint">
             <span>Scroll to Explore</span>
@@ -47,9 +84,23 @@
         </div>
     </header>
 
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center">
+            <span class="od-gem">◆</span>
+            <span class="od-text">OVERVIEW</span>
+            <span class="od-gem">◆</span>
+        </div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- 01 INTRODUCTION -->
     <section class="section intro-section" id="introduction">
         <div class="section-bg-map"></div>
+        <!-- NEW: Corner ornaments -->
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-tr">✦</div>
         <div class="container">
             <div class="section-header" data-animate>
                 <span class="section-eyebrow">01 · Overview</span>
@@ -94,6 +145,17 @@
             </div>
         </div>
     </section>
+
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center">
+            <span class="od-gem od-gem-dark">◆</span>
+            <span class="od-text od-text-dark">PURPOSE</span>
+            <span class="od-gem od-gem-dark">◆</span>
+        </div>
+        <div class="od-line od-line-dark"></div>
+    </div>
 
     <!-- 02 VISION & MISSION -->
     <section class="section vm-section" id="vision-mission">
@@ -143,9 +205,22 @@
         </div>
     </section>
 
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center">
+            <span class="od-gem">◆</span>
+            <span class="od-text">PROCESS</span>
+            <span class="od-gem">◆</span>
+        </div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- 03 HOW MUN WORKS -->
     <section class="section how-section" id="how-it-works">
         <div class="section-bg-map"></div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="section-header" data-animate>
                 <span class="section-eyebrow">03 · Process</span>
@@ -186,6 +261,17 @@
         </div>
     </section>
 
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center">
+            <span class="od-gem od-gem-dark">◆</span>
+            <span class="od-text od-text-dark">ELIGIBILITY</span>
+            <span class="od-gem od-gem-dark">◆</span>
+        </div>
+        <div class="od-line od-line-dark"></div>
+    </div>
+
     <!-- 04 ELIGIBILITY -->
     <section class="section eligibility-section" id="eligibility">
         <div class="container">
@@ -218,9 +304,22 @@
         </div>
     </section>
 
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center">
+            <span class="od-gem">◆</span>
+            <span class="od-text">CONDUCT</span>
+            <span class="od-gem">◆</span>
+        </div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- 05 RULES -->
     <section class="section rules-section" id="rules">
         <div class="section-bg-map"></div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="section-header" data-animate>
                 <span class="section-eyebrow">05 · Conduct</span>
@@ -262,6 +361,17 @@
             </div>
         </div>
     </section>
+
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider ornate-divider-dark">
+        <div class="od-line od-line-dark"></div>
+        <div class="od-center">
+            <span class="od-gem od-gem-dark">◆</span>
+            <span class="od-text od-text-dark">SCHEDULE</span>
+            <span class="od-gem od-gem-dark">◆</span>
+        </div>
+        <div class="od-line od-line-dark"></div>
+    </div>
 
     <!-- 06 TIMELINE -->
     <section class="section timeline-section" id="timeline">
@@ -322,9 +432,24 @@
         </div>
     </section>
 
+    <!-- ORNATE SECTION DIVIDER -->
+    <div class="ornate-divider">
+        <div class="od-line"></div>
+        <div class="od-center">
+            <span class="od-gem">◆</span>
+            <span class="od-text">LEADERSHIP</span>
+            <span class="od-gem">◆</span>
+        </div>
+        <div class="od-line"></div>
+    </div>
+
     <!-- 07 SECRETARIAT -->
     <section class="section secretariat-section" id="secretariat">
         <div class="section-bg-map"></div>
+        <div class="corner-ornament corner-tl">✦</div>
+        <div class="corner-ornament corner-tr">✦</div>
+        <div class="corner-ornament corner-bl">✦</div>
+        <div class="corner-ornament corner-br">✦</div>
         <div class="container">
             <div class="section-header" data-animate>
                 <span class="section-eyebrow">07 · Leadership</span>
@@ -372,6 +497,8 @@
     <section class="section closing-section">
         <div class="closing-bg"></div>
         <div class="closing-overlay"></div>
+        <!-- NEW: floating sparks -->
+        <div class="closing-sparks" id="closingSparks"></div>
         <div class="container">
             <div class="closing-content" data-animate>
                 <div class="closing-ornament">◆ ◆ ◆</div>
@@ -380,7 +507,7 @@
                 <p class="closing-body">SIMATS MUN 2026 is more than a conference — it is a crucible where future global changemakers are forged through debate, dialogue, and diplomacy. A space where brilliant minds challenge each other, where ideas evolve into resolutions, and where every delegate discovers the leader within.</p>
                 <p class="closing-body">We invite you to be part of this historic inaugural edition — to raise your placard, take the floor, and make your voice count on the world stage.</p>
                 <div class="closing-ctas">
-                    <a href="index.html#register" class="cta-btn cta-primary">Register Now</a>
+                    <a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse" class="cta-btn cta-primary">Register Now</a>
                     <a href="committees.html" class="cta-btn cta-secondary">Explore Committees</a>
                 </div>
             </div>
@@ -410,7 +537,7 @@
                         <li><a href="about.html">→ About</a></li>
                         <li><a href="committees.html">→ Committees</a></li>
                         <li><a href="contact.html">→ Contact</a></li>
-                        <li><a href="index.html#register">→ Register</a></li>
+                        <li><a href="https://docs.google.com/forms/d/e/1FAIpQLScOWp4qMa_FnYsrC9GpAJDIZBE_DCmWMveL-NBQRIcTcwy2eQ/formResponse">→ Register</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -442,6 +569,11 @@
             </div>
         </div>
     </footer>
+
+    <!-- BACK TO TOP -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><polyline points="18 15 12 9 6 15"/></svg>
+    </button>
 
     <script src="about.js"></script>
 </body>

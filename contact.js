@@ -1,13 +1,80 @@
 /* ═══════════════════════════════════════════════════════════
    CONTACT PAGE JAVASCRIPT — contact.js
    SIMATS MUN 2026 | Enhanced Edition
-   Sections: Hero · General Info · Venue · Social · Closing
 ═══════════════════════════════════════════════════════════ */
 
 document.addEventListener('DOMContentLoaded', () => {
 
     /* ─────────────────────────────────────────
-       1. HERO PARTICLE SYSTEM
+       PAGE FADE IN
+    ───────────────────────────────────────── */
+    document.body.style.opacity   = '0';
+    document.body.style.transition = 'opacity 0.55s ease';
+    requestAnimationFrame(() => { document.body.style.opacity = '1'; });
+
+    /* ─────────────────────────────────────────
+       E1. CUSTOM CURSOR
+    ───────────────────────────────────────── */
+    const cursorDot  = document.getElementById('cursorDot');
+    const cursorRing = document.getElementById('cursorRing');
+
+    if (cursorDot && cursorRing && window.matchMedia('(hover: hover)').matches) {
+        let dotX = 0, dotY = 0, ringX = 0, ringY = 0;
+        document.addEventListener('mousemove', (e) => { dotX = e.clientX; dotY = e.clientY; });
+        const animateCursor = () => {
+            cursorDot.style.left = dotX + 'px';
+            cursorDot.style.top  = dotY + 'px';
+            ringX += (dotX - ringX) * 0.12;
+            ringY += (dotY - ringY) * 0.12;
+            cursorRing.style.left = ringX + 'px';
+            cursorRing.style.top  = ringY + 'px';
+            requestAnimationFrame(animateCursor);
+        };
+        animateCursor();
+
+        const hoverEls = document.querySelectorAll('a, button, .info-tile, .social-platform-card, .hero-action-btn, .qcb-btn, .tile-link-btn');
+        hoverEls.forEach(el => {
+            el.addEventListener('mouseenter', () => cursorRing.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => cursorRing.classList.remove('hovering'));
+        });
+        document.addEventListener('mouseleave', () => { cursorDot.style.opacity = '0'; cursorRing.style.opacity = '0'; });
+        document.addEventListener('mouseenter', () => { cursorDot.style.opacity = '1'; cursorRing.style.opacity = '1'; });
+    }
+
+    /* ─────────────────────────────────────────
+       E2. NAV PROGRESS BAR
+    ───────────────────────────────────────── */
+    const navProgress = document.getElementById('navProgress');
+    if (navProgress) {
+        window.addEventListener('scroll', () => {
+            const prog = window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100;
+            navProgress.style.width = Math.min(prog, 100) + '%';
+        }, { passive: true });
+    }
+
+    /* ─────────────────────────────────────────
+       E3. GOLD RIBBON MARQUEE
+    ───────────────────────────────────────── */
+    const ribbon = document.getElementById('goldRibbon');
+    if (ribbon) {
+        ribbon.style.overflow = 'hidden';
+        ribbon.style.whiteSpace = 'nowrap';
+        ribbon.style.display = 'block';
+        const original = ribbon.innerHTML;
+        ribbon.innerHTML = original + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;' + original;
+        let pos = 0;
+        const totalWidth = ribbon.scrollWidth / 2;
+        const scrollRibbon = () => {
+            pos += 0.6;
+            if (pos >= totalWidth) pos = 0;
+            ribbon.style.transform = `translateX(-${pos}px)`;
+            requestAnimationFrame(scrollRibbon);
+        };
+        requestAnimationFrame(scrollRibbon);
+    }
+
+    /* ─────────────────────────────────────────
+       E4. HERO PARTICLE SYSTEM
     ───────────────────────────────────────── */
     const particleContainer = document.getElementById('particles');
     if (particleContainer) {
@@ -31,47 +98,55 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       2. HERO PARALLAX — subtle depth on bg
+       E5. HERO PARALLAX
     ───────────────────────────────────────── */
     const heroBg = document.querySelector('.contact-hero-bg');
     const heroOverlay = document.querySelector('.contact-hero-overlay');
     if (heroBg) {
         window.addEventListener('scroll', () => {
-            const scrolled = window.scrollY;
-            heroBg.style.transform = `translateY(${scrolled * 0.25}px)`;
-            if (heroOverlay) heroOverlay.style.transform = `translateY(${scrolled * 0.15}px)`;
+            const s = window.scrollY;
+            heroBg.style.transform = `translateY(${s * 0.25}px)`;
+            if (heroOverlay) heroOverlay.style.transform = `translateY(${s * 0.15}px)`;
         }, { passive: true });
     }
 
     /* ─────────────────────────────────────────
-       3. HERO STAT HOVER LIFT
+       E6. HERO STAT HOVER LIFT
     ───────────────────────────────────────── */
     document.querySelectorAll('.hero-stat').forEach(stat => {
         const num = stat.querySelector('.hero-stat-num');
         if (!num) return;
         stat.addEventListener('mouseenter', () => {
-            num.style.transform  = 'scale(1.1)';
+            num.style.transform  = 'scale(1.12)';
             num.style.transition = 'transform 0.3s ease';
         });
-        stat.addEventListener('mouseleave', () => {
-            num.style.transform = 'scale(1)';
-        });
+        stat.addEventListener('mouseleave', () => { num.style.transform = 'scale(1)'; });
     });
 
     /* ─────────────────────────────────────────
-       4. UNIVERSAL SCROLL REVEAL — IntersectionObserver
+       E7. ORNATE DIVIDER REVEAL
     ───────────────────────────────────────── */
-    const injectRevealCSS = () => {
-        const s = document.createElement('style');
-        s.textContent = `.sr-hidden { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; } .sr-visible { opacity: 1 !important; transform: translateY(0) !important; }`;
-        document.head.appendChild(s);
-    };
-    injectRevealCSS();
+    const dividers = document.querySelectorAll('.ornate-divider');
+    const dividerObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                dividerObs.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.4 });
+    dividers.forEach(d => dividerObs.observe(d));
+
+    /* ─────────────────────────────────────────
+       E8. SCROLL REVEAL — universal
+    ───────────────────────────────────────── */
+    const style = document.createElement('style');
+    style.textContent = `.sr-hidden { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; } .sr-visible { opacity: 1 !important; transform: translateY(0) !important; }`;
+    document.head.appendChild(style);
 
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Respect any existing delay on the element
                 const delay = entry.target.dataset.revealDelay || 0;
                 setTimeout(() => entry.target.classList.add('sr-visible'), Number(delay));
                 revealObserver.unobserve(entry.target);
@@ -79,18 +154,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
 
-    const revealTargets = document.querySelectorAll(
-        '.section-header, .section-intro-note, .social-intro, ' +
-        '.venue-details, .venue-map-placeholder, .closing-content'
-    );
-
-    revealTargets.forEach(el => {
+    document.querySelectorAll('.section-header, .section-intro-note, .social-intro, .venue-details, .venue-map-placeholder, .closing-content').forEach(el => {
         el.classList.add('sr-hidden');
         revealObserver.observe(el);
     });
 
     /* ─────────────────────────────────────────
-       5. STAGGERED GRID ENTRY (info tiles, social cards, etc.)
+       E9. STAGGERED GRID ENTRY
     ───────────────────────────────────────── */
     function staggerGrid(gridSelector, staggerMs = 90, yOffset = 22) {
         document.querySelectorAll(gridSelector).forEach(grid => {
@@ -100,7 +170,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 item.style.transform = `translateY(${yOffset}px) scale(0.98)`;
                 item.style.transition = `opacity 0.6s ease ${i * staggerMs}ms, transform 0.6s ease ${i * staggerMs}ms`;
             });
-
             const obs = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
@@ -112,7 +181,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     }
                 });
             }, { threshold: 0.08 });
-
             obs.observe(grid);
         });
     }
@@ -121,7 +189,7 @@ document.addEventListener('DOMContentLoaded', () => {
     staggerGrid('.social-platforms',  140);
 
     /* ─────────────────────────────────────────
-       6. QUICK CONTACT BANNER — slide-up entry
+       E10. QUICK CONTACT BANNER — slide-up
     ───────────────────────────────────────── */
     const qcBanner = document.querySelector('.quick-contact-banner');
     if (qcBanner) {
@@ -141,7 +209,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       7. RESPONSE STRIP — fade in
+       E11. RESPONSE STRIP — fade in
     ───────────────────────────────────────── */
     const rs = document.querySelector('.response-strip');
     if (rs) {
@@ -161,7 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       8. VENUE DETAILS — stagger children
+       E12. VENUE DETAILS — stagger children
     ───────────────────────────────────────── */
     const venueDetails = document.querySelector('.venue-details');
     if (venueDetails) {
@@ -183,10 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const venueObs = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    children.forEach(el => {
-                        el.style.opacity   = '1';
-                        el.style.transform = 'translateX(0)';
-                    });
+                    children.forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateX(0)'; });
                     venueObs.unobserve(entry.target);
                 }
             });
@@ -195,7 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       9. MAP FRAME — scale in
+       E13. MAP FRAME — scale in
     ───────────────────────────────────────── */
     const mapFrame = document.querySelector('.venue-map-placeholder');
     if (mapFrame) {
@@ -215,21 +280,59 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       10. INFO TILE — icon rotate on hover
+       E14. INFO TILE — 3D tilt on mousemove
     ───────────────────────────────────────── */
     document.querySelectorAll('.info-tile').forEach(tile => {
-        tile.addEventListener('mouseenter', () => {
-            const icon = tile.querySelector('.info-tile-icon');
-            if (icon) icon.style.transform = 'scale(1.12) rotate(-8deg)';
+        tile.addEventListener('mousemove', (e) => {
+            const rect = tile.getBoundingClientRect();
+            const dx = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+            const dy = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+            tile.style.transform = `perspective(700px) rotateX(${-dy * 5}deg) rotateY(${dx * 5}deg) translateY(-9px)`;
+            const x = ((e.clientX - rect.left) / rect.width)  * 100;
+            const y = ((e.clientY - rect.top)  / rect.height) * 100;
+            tile.style.setProperty('--mx', `${x}%`);
+            tile.style.setProperty('--my', `${y}%`);
         });
-        tile.addEventListener('mouseleave', () => {
-            const icon = tile.querySelector('.info-tile-icon');
-            if (icon) icon.style.transform = '';
+        tile.addEventListener('mouseleave', () => { tile.style.transform = ''; });
+    });
+
+    /* ─────────────────────────────────────────
+       E15. SOCIAL CARD — mouse-follow glow
+    ───────────────────────────────────────── */
+    document.querySelectorAll('.social-platform-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width)  * 100;
+            const y = ((e.clientY - rect.top)  / rect.height) * 100;
+            card.style.setProperty('--mx', `${x}%`);
+            card.style.setProperty('--my', `${y}%`);
         });
     });
 
     /* ─────────────────────────────────────────
-       11. CLOSING CONTENT — stagger children
+       E16. CLOSING SPARKS
+    ───────────────────────────────────────── */
+    const sparksContainer = document.getElementById('closingSparks');
+    if (sparksContainer) {
+        for (let i = 0; i < 22; i++) {
+            const s = document.createElement('div');
+            s.className = 'closing-spark';
+            const drift = (Math.random() - 0.5) * 80;
+            s.style.cssText = `
+                left: ${5 + Math.random() * 90}%;
+                bottom: ${Math.random() * 40}%;
+                --dur: ${5 + Math.random() * 8}s;
+                --delay: ${Math.random() * 6}s;
+                --drift: ${drift}px;
+                width: ${1 + Math.random() * 3}px;
+                height: ${1 + Math.random() * 3}px;
+            `;
+            sparksContainer.appendChild(s);
+        }
+    }
+
+    /* ─────────────────────────────────────────
+       E17. CLOSING CONTENT — stagger children
     ───────────────────────────────────────── */
     const closingContent = document.querySelector('.closing-content');
     if (closingContent) {
@@ -239,14 +342,10 @@ document.addEventListener('DOMContentLoaded', () => {
             el.style.transform = 'translateY(20px)';
             el.style.transition = `opacity 0.65s ease ${i * 120}ms, transform 0.65s ease ${i * 120}ms`;
         });
-
         const closingObs = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    cItems.forEach(el => {
-                        el.style.opacity   = '1';
-                        el.style.transform = 'translateY(0)';
-                    });
+                    cItems.forEach(el => { el.style.opacity = '1'; el.style.transform = 'translateY(0)'; });
                     closingObs.unobserve(entry.target);
                 }
             });
@@ -255,27 +354,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       12. BACK TO TOP
+       E18. BACK TO TOP
     ───────────────────────────────────────── */
     const backBtn = document.getElementById('backToTop');
     if (backBtn) {
-        backBtn.style.opacity     = '0';
-        backBtn.style.transition  = 'opacity 0.3s ease';
+        backBtn.style.opacity      = '0';
+        backBtn.style.transition   = 'opacity 0.3s ease, background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease';
         backBtn.style.pointerEvents = 'none';
-
         window.addEventListener('scroll', () => {
             const show = window.scrollY > 450;
-            backBtn.style.opacity     = show ? '1' : '0';
+            backBtn.style.opacity      = show ? '1' : '0';
             backBtn.style.pointerEvents = show ? 'auto' : 'none';
         }, { passive: true });
-
-        backBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
+        backBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
     }
 
     /* ─────────────────────────────────────────
-       13. MOBILE NAV TOGGLE
+       E19. MOBILE NAV TOGGLE
     ───────────────────────────────────────── */
     const navToggle = document.getElementById('nav-toggle');
     const navMenu   = document.getElementById('nav-menu');
@@ -301,26 +396,34 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     /* ─────────────────────────────────────────
-       14. PAGE LOAD FADE-IN
+       E20. VENUE CREST hover spin
     ───────────────────────────────────────── */
-    document.body.style.opacity   = '0';
-    document.body.style.transition = 'opacity 0.55s ease';
-    requestAnimationFrame(() => {
-        document.body.style.opacity = '1';
-    });
+    const venueCrest = document.querySelector('.venue-crest');
+    if (venueCrest) {
+        venueCrest.style.transition = 'transform 0.4s ease, box-shadow 0.4s ease';
+        venueCrest.addEventListener('mouseenter', () => {
+            venueCrest.style.transform = 'scale(1.07) rotate(-6deg)';
+            venueCrest.style.boxShadow = '0 12px 36px rgba(0,0,0,0.4), 0 0 0 2px rgba(212,175,55,0.4)';
+        });
+        venueCrest.addEventListener('mouseleave', () => {
+            venueCrest.style.transform = '';
+            venueCrest.style.boxShadow = '';
+        });
+    }
 
     /* ─────────────────────────────────────────
-       15. MOUSE-MOVE GLOW on cards (mouse follow)
+       E21. MAP FRAME — subtle tilt on hover
     ───────────────────────────────────────── */
-    document.querySelectorAll('.info-tile, .social-platform-card').forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = ((e.clientX - rect.left) / rect.width)  * 100;
-            const y = ((e.clientY - rect.top)  / rect.height) * 100;
-            card.style.setProperty('--mx', `${x}%`);
-            card.style.setProperty('--my', `${y}%`);
+    const mapFrameEl = document.querySelector('.map-frame');
+    if (mapFrameEl) {
+        mapFrameEl.addEventListener('mousemove', (e) => {
+            const rect = mapFrameEl.getBoundingClientRect();
+            const dx = (e.clientX - rect.left - rect.width  / 2) / (rect.width  / 2);
+            const dy = (e.clientY - rect.top  - rect.height / 2) / (rect.height / 2);
+            mapFrameEl.style.transform = `perspective(800px) rotateX(${-dy * 4}deg) rotateY(${dx * 4}deg)`;
         });
-    });
+        mapFrameEl.addEventListener('mouseleave', () => { mapFrameEl.style.transform = ''; });
+    }
 
     console.log('SIMATS MUN 2026 — Contact page initialised ✔ Enhanced Edition');
 });
